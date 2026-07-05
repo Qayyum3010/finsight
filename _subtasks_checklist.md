@@ -92,25 +92,25 @@
 
 [x] 5.5.1 — Build Layout shell component — Create a Layout wrapping Header, an `<Outlet />` (or children), and Footer — Files: `src/components/Layout.jsx` — Done when: all three routes render inside the shared Header/Footer shell — Dependency: 5.4.1, 5.3.3
 
-[ ] 5.5.2 — Build Footer component — Create simple centered footer text with top border — Files: `src/components/Footer.jsx` — Done when: footer renders at bottom of every route — Dependency: 5.5.1
+[x] 5.5.2 — Build Footer component — Create simple centered footer text with top border — Files: `src/components/Footer.jsx` — Done when: footer renders at bottom of every route — Dependency: 5.5.1
 
-[ ] 5.6.1 — Build MobileTabBar component — Create bottom tab bar with 4 tab buttons (Overview, Trends, Transactions, Goals), hidden above `md` breakpoint — Files: `src/components/MobileTabBar.jsx` — Done when: tab bar is visible only when browser width is below 768px — Dependency: 5.5.1
+[x] 5.6.1 — Build MobileTabBar component — Create bottom tab bar with 4 tab buttons (Overview, Trends, Transactions, Goals), hidden above `md` breakpoint — Files: `src/components/MobileTabBar.jsx` — Done when: tab bar is visible only when browser width is below 768px — Dependency: 5.5.1
 
-[ ] 5.6.2 — Wire tab bar active state — Add active/highlighted styling based on current scroll section or route — Files: `src/components/MobileTabBar.jsx` — Done when: clicking a tab visibly highlights it — Dependency: 5.6.1
+[x] 5.6.2 — Wire tab bar active state — Add active/highlighted styling based on current scroll section or route — Files: `src/components/MobileTabBar.jsx` — Done when: clicking a tab visibly highlights it — Dependency: 5.6.1
 
-[ ] 5.7.1 — Build useFilteredTransactions hook — Create a hook accepting transactions, dateRange, search, category, sort params and returning filtered/sorted array via `useMemo` — Files: `src/hooks/useFilteredTransactions.js` — Done when: calling the hook with test params returns correctly filtered results — Dependency: 5.1.2
+[x] 5.7.1 — Build useFilteredTransactions hook — Create a hook accepting transactions, dateRange, search, category, sort params and returning filtered/sorted array via `useMemo` — Files: `src/hooks/useFilteredTransactions.js` — Done when: calling the hook with test params returns correctly filtered results — Dependency: 5.1.2
 
-[ ] 5.7.2 — Build useSummaryTotals hook — Create a hook that computes balance, income, expenses, net savings from a transactions array via `useMemo` — Files: `src/hooks/useSummaryTotals.js` — Done when: calling the hook returns correct totals for a test dataset — Dependency: 5.1.2
+[x] 5.7.2 — Build useSummaryTotals hook — Create a hook that computes balance, income, expenses, net savings from a transactions array via `useMemo` — Files: `src/hooks/useSummaryTotals.js` — Done when: calling the hook returns correct totals for a test dataset — Dependency: 5.1.2
 
 ━━━
 ## PHASE 6: Animation and Motion Setup
 ━━━
 
-[ ] 6.1.1 — Create useAutoAnimate wrapper hook — Import and re-export `useAutoAnimate` from `@formkit/auto-animate/react` for consistent usage — Files: `src/hooks/useAutoAnimate.js` — Done when: importing the hook in a test component works without errors — Dependency: 1.6.3
+[x] 6.1.1 — Create useAutoAnimate wrapper hook — Import and re-export `useAutoAnimate` from `@formkit/auto-animate/react` for consistent usage — Files: `src/hooks/useAutoAnimate.js` — Done when: importing the hook in a test component works without errors — Dependency: 1.6.3
 
-[ ] 6.2.1 — Define shared transition utility classes — Add a constants file with reusable Tailwind class strings for card hover-lift and fade-in — Files: `src/lib/animationClasses.js` — Done when: applying the class string to a test card shows hover lift and shadow transition — Dependency: 1.2.5
+[x] 6.2.1 — Define shared transition utility classes — Add a constants file with reusable Tailwind class strings for card hover-lift and fade-in — Files: `src/lib/animationClasses.js` — Done when: applying the class string to a test card shows hover lift and shadow transition — Dependency: 1.2.5
 
-[ ] 6.3.1 — Test Auto Animate on throwaway list — Build a temporary test list component, apply `useAutoAnimate`, and confirm reorder/fade animation works — Files: `src/components/TestList.jsx` (temporary, delete after) — Done when: adding/removing/reordering items animates smoothly, then delete the test file — Dependency: 6.1.1
+[x] 6.3.1 — Test Auto Animate on throwaway list — Build a temporary test list component, apply `useAutoAnimate`, and confirm reorder/fade animation works — Files: `src/components/TestList.jsx` (temporary, delete after) — Done when: adding/removing/reordering items animates smoothly, then delete the test file — Dependency: 6.1.1
 
 ━━━
 ## PHASE 7: Frontend — Page by Page
@@ -118,7 +118,7 @@
 
 ### 7A. Dashboard
 
-[ ] 7A.1.1 — Build SummaryCard component — Create a reusable card showing label, value, and trend indicator (arrow icon + %) — Files: `src/components/SummaryCard.jsx` — Done when: passing different props renders correctly styled cards matching Stitch design — Dependency: 1.5.2, 1.6.2
+[x] 7A.1.1 — Build SummaryCard component — Create a reusable card showing label, value, and trend indicator (arrow icon + %) — Files: `src/components/SummaryCard.jsx` — Done when: passing different props renders correctly styled cards matching Stitch design — Dependency: 1.5.2, 1.6.2
 
 [ ] 7A.1.2 — Wire 4 SummaryCards to useSummaryTotals — Render 4 SummaryCard instances in a grid, fed by the hook's output — Files: `src/pages/Dashboard.jsx` — Done when: cards display correct real values from mock data — Dependency: 7A.1.1, 5.7.2
 
