@@ -208,36 +208,37 @@ Phase 17 — Post-Launch: Add Vercel Analytics, final README pass (description, 
 (Phases 2, 3, 4, 8, 9, 11 — Database, Auth, Backend API, AI Integration, Frontend-Backend Connection, SaaS Payments — are skipped entirely; this is a frontend-only, mock-data, no-AI project.)
 
 12. CURRENT PROGRESS
-    Last updated: 2026-07-05
-    Completed subtasks:
+Last updated: 2026-07-05
+Completed subtasks:
 
 0.1 — Environment setup
 0.3 — GitHub repository created and cloned; Vercel account created and linked
 1.1 — Scaffolded Vite + React project, verified dev server boots, committed and pushed initial scaffold
-1.2 — Installed Tailwind CSS v4 via @tailwindcss/vite, registered the plugin in vite.config.js, replaced src/index.css with a single import, verified compilation with a test component, committed and pushed
-1.3 — Added the full design-token color palette (primary, primary-container, secondary, tertiary, error, success, warning, background, surface-container-lowest, on-surface, on-surface-variant, outline-variant) via a v4 @theme block in src/index.css, with dark-mode overrides for the surface/text/border tokens under a .dark selector. Added @custom-variant dark (&:where(.dark, .dark \*)); to restore class-based dark mode. Verified both light and dark rendering by manually toggling .dark on <html> in DevTools. Committed and pushed.
+1.2 — Installed Tailwind CSS v4 via @tailwindcss/vite, registered the plugin in vite.config.js, replaced src/index.css with a single import, verified compilation, committed and pushed
+1.3 — Added the full design-token color palette via a v4 @theme block in src/index.css, with dark-mode overrides under .dark, and restored class-based dark mode via @custom-variant. Verified light/dark rendering. Committed and pushed.
+1.4 — Added Inter (weights 400/500/600/700/800) via Google Fonts preconnect + stylesheet links in index.html. Added --font-sans to the @theme block in src/index.css and applied it to body via @layer base. Verified font loads in Network tab and computed style shows Inter. Committed and pushed.
 
 Current subtask:
-
-ID: 1.4
-Title: Add Inter font
-Goal: Add the Google Fonts CDN link for Inter (weights 400/500/600/700/800) to index.html, then set it as the default sans font via --font-sans in the @theme block in src/index.css.
-Files involved: index.html, src/index.css
-
-Next subtask:
 
 ID: 1.5
 Title: Initialize shadcn/ui
 Goal: Run npx shadcn@latest init, confirming it correctly detects the Tailwind v4 + CSS-first @theme setup (no tailwind.config.js present), then add the Button component as a pipeline test.
 Files involved: components.json, src/lib/utils.js, src/components/ui/button.jsx
 
+Next subtask:
+
+ID: 1.6
+Title: Install core dependencies (Recharts, Lucide, Auto Animate, Sonner, React Router)
+Goal: Install recharts, lucide-react, @formkit/auto-animate, sonner, and react-router-dom as dependencies.
+Files involved: package.json
+
 13. ACTIVE CODEBASE
 
 vite.config.js — includes react() and tailwindcss() (from @tailwindcss/vite) in the plugins array
-src/index.css — contains @import "tailwindcss";, @custom-variant dark (&:where(.dark, .dark \*));, an @theme block with the full light-mode color token palette, and a .dark { } override block for background/surface/text/border tokens. No font tokens yet (added in 1.4).
-src/App.jsx — temporarily holds a token-verification test component (card using bg-surface-container-lowest, text-on-surface, text-on-surface-variant, border-outline-variant, and a bg-primary button); will be replaced with real app structure in Phase 5/7
+index.html — includes Google Fonts preconnect + stylesheet links for Inter (400/500/600/700/800), title set to "FinSight"
+src/index.css — contains @import "tailwindcss";, @custom-variant dark (&:where(.dark, .dark *));, an @theme block with --font-sans (Inter) plus the full color token palette, a .dark { } override block, and a @layer base rule applying --font-sans to body
+src/App.jsx — still holds the token-verification test component from 1.3; will be replaced with real app structure in Phase 5/7
 src/main.jsx — confirmed importing ./index.css; otherwise still Vite default
-index.html — still Vite default, untouched since 1.1 (Inter font link added next in 1.4)
 No tailwind.config.js or postcss.config.js — not used in this v4 + Vite-plugin setup
 
 14. SESSION LOG
@@ -246,15 +247,16 @@ No tailwind.config.js or postcss.config.js — not used in this v4 + Vite-plugin
 2026-07-05: Completed 0.1 — Node/npm and VS Code extensions verified.
 2026-07-05: Completed 0.3 — GitHub repo created/cloned, Vercel account linked.
 2026-07-05: Completed 1.1 — Vite + React scaffolded, dev server verified, initial commit pushed.
-2026-07-05: Completed 1.2 — Switched to Tailwind CSS v4 using the official @tailwindcss/vite plugin, verified compilation with a test component.
-2026-07-05: Completed 1.3 — Defined the full design-token color palette via a v4 @theme block, added light/dark override values under .dark, restored class-based dark mode via @custom-variant, and visually verified both modes by toggling the .dark class in DevTools. Committed and pushed.
+2026-07-05: Completed 1.2 — Switched to Tailwind CSS v4 using the official @tailwindcss/vite plugin, verified compilation.
+2026-07-05: Completed 1.3 — Defined the full design-token color palette via a v4 @theme block, restored class-based dark mode via @custom-variant, verified both modes.
+2026-07-05: Completed 1.4 — Added Inter font via Google Fonts links in index.html, wired --font-sans in the @theme block, applied to body via @layer base, verified font loading and computed styles. Committed and pushed.
 
 15. KNOWN ISSUES AND OPEN QUESTIONS
 
 Design system was extracted from only 3 desktop Stitch screens with no native mobile designs exported — sub-768px experience must be built net-new.
 Styling inconsistencies flagged in the source export still need resolving during build (Section 10): background token mismatch, input padding/radius inconsistency, sticky vs. fixed header approach.
 Icon buttons (40×40px) and pagination buttons (32×32px) fall below the 44×44px touch target minimum — fix on mobile breakpoints.
-shadcn/ui's default init flow assumes a tailwind.config.js exists in some CLI versions — when reaching subtask 1.5, confirm the CLI supports v4's CSS-first @theme setup, or manually wire components.json to reference the tokens already defined in src/index.css instead of expecting a JS config.
+shadcn/ui's default init flow assumes a tailwind.config.js exists in some CLI versions — when reaching subtask 1.5 (next), confirm the CLI supports v4's CSS-first @theme setup, or manually wire components.json to reference the tokens already defined in src/index.css.
 Not yet decided: whether /transactions and /goals get dedicated routes (React Router) or stay as in-page scroll sections.
 Still open: confirm whether the GitHub repo/Vercel project should later be moved under an org account.
 
