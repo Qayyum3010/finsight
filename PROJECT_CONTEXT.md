@@ -208,38 +208,45 @@ Phase 17 — Post-Launch: Add Vercel Analytics, final README pass (description, 
 (Phases 2, 3, 4, 8, 9, 11 — Database, Auth, Backend API, AI Integration, Frontend-Backend Connection, SaaS Payments — are skipped entirely; this is a frontend-only, mock-data, no-AI project.)
 
 12. CURRENT PROGRESS
-Last updated: 2026-07-05
-Completed subtasks:
+    Last updated: 2026-07-05
+    Completed subtasks:
 
 0.1 — Environment setup
 0.3 — GitHub repository created and cloned; Vercel account created and linked
 1.1 — Scaffolded Vite + React project, verified dev server boots, committed and pushed initial scaffold
-1.2 — Installed Tailwind CSS v4 via @tailwindcss/vite, registered the plugin in vite.config.js, replaced src/index.css with a single import, verified compilation, committed and pushed
-1.3 — Added the full design-token color palette via a v4 @theme block in src/index.css, with dark-mode overrides under .dark, and restored class-based dark mode via @custom-variant. Verified light/dark rendering. Committed and pushed.
-1.4 — Added Inter (weights 400/500/600/700/800) via Google Fonts preconnect + stylesheet links in index.html. Added --font-sans to the @theme block in src/index.css and applied it to body via @layer base. Verified font loads in Network tab and computed style shows Inter. Committed and pushed.
+1.2 — Installed Tailwind CSS v4 via @tailwindcss/vite, registered plugin, verified compilation
+1.3 — Added the full design-token color palette via a v4 @theme block, dark-mode overrides under .dark, restored class-based dark mode via @custom-variant
+1.4 — Added Inter font via Google Fonts links, wired --font-sans in @theme, applied to body via @layer base
+1.5 — Initialized shadcn/ui (Base library, Vega preset). Hit and fixed an import-alias resolution error: added jsconfig.json with @/_ → ./src/_ path mapping, and updated vite.config.js to resolve the @ alias via path.resolve — using fileURLToPath(import.meta.url) instead of \_\_dirname since vite.config.js runs as an ES module. Re-ran init successfully, generated components.json, src/lib/utils.js, src/components/ui/button.jsx, and shadcn's CSS variables appended to src/index.css. Verified the Button renders correctly alongside existing custom tokens with no console errors or warnings. Committed and pushed.
+1.6 — Installed recharts, lucide-react, @formkit/auto-animate, sonner, and react-router-dom as dependencies. Verified all appear in package.json and npm run dev still runs cleanly. Committed and pushed.
 
 Current subtask:
 
-ID: 1.5
-Title: Initialize shadcn/ui
-Goal: Run npx shadcn@latest init, confirming it correctly detects the Tailwind v4 + CSS-first @theme setup (no tailwind.config.js present), then add the Button component as a pipeline test.
-Files involved: components.json, src/lib/utils.js, src/components/ui/button.jsx
+ID: 1.7
+Title: Create folder structure
+Goal: Create empty folders src/components/, src/data/, src/hooks/, src/context/, src/lib/, src/pages/ (note: src/components/ui/ and src/lib/utils.js already exist from shadcn init in 1.5).
+Files involved: folder structure only
 
 Next subtask:
 
-ID: 1.6
-Title: Install core dependencies (Recharts, Lucide, Auto Animate, Sonner, React Router)
-Goal: Install recharts, lucide-react, @formkit/auto-animate, sonner, and react-router-dom as dependencies.
-Files involved: package.json
+ID: 1.8
+Title: Configure Prettier and ESLint
+Goal: Create a .prettierrc with standard settings, verify/adjust the default Vite ESLint config for React.
+Files involved: .prettierrc, .eslintrc.cjs (or eslint.config.js)
 
 13. ACTIVE CODEBASE
 
-vite.config.js — includes react() and tailwindcss() (from @tailwindcss/vite) in the plugins array
-index.html — includes Google Fonts preconnect + stylesheet links for Inter (400/500/600/700/800), title set to "FinSight"
-src/index.css — contains @import "tailwindcss";, @custom-variant dark (&:where(.dark, .dark *));, an @theme block with --font-sans (Inter) plus the full color token palette, a .dark { } override block, and a @layer base rule applying --font-sans to body
-src/App.jsx — still holds the token-verification test component from 1.3; will be replaced with real app structure in Phase 5/7
+vite.config.js — includes react() and tailwindcss() plugins, plus @ → src/ alias resolution using fileURLToPath(import.meta.url) (ESM-safe, no \_\_dirname)
+jsconfig.json — @/_ → ./src/_ path mapping for editor/tooling support (no baseUrl, avoiding the TS6 deprecation warning)
+index.html — includes Google Fonts links for Inter, title "FinSight"
+src/index.css — contains our custom @theme block (color tokens + --font-sans), @custom-variant dark, .dark overrides, @layer base font rule, plus shadcn's own CSS variables (Vega preset) appended by the init CLI
+components.json — shadcn/ui config (Base library, Vega preset)
+src/lib/utils.js — shadcn's cn() class-merging utility
+src/components/ui/button.jsx — shadcn Button component
+src/App.jsx — temporary test rendering the token-test card + shadcn Button together; will be replaced with real app structure in Phase 5/7
 src/main.jsx — confirmed importing ./index.css; otherwise still Vite default
-No tailwind.config.js or postcss.config.js — not used in this v4 + Vite-plugin setup
+package.json — now includes recharts, lucide-react, @formkit/auto-animate, sonner, react-router-dom as dependencies
+No tailwind.config.js or postcss.config.js
 
 14. SESSION LOG
 
@@ -247,17 +254,19 @@ No tailwind.config.js or postcss.config.js — not used in this v4 + Vite-plugin
 2026-07-05: Completed 0.1 — Node/npm and VS Code extensions verified.
 2026-07-05: Completed 0.3 — GitHub repo created/cloned, Vercel account linked.
 2026-07-05: Completed 1.1 — Vite + React scaffolded, dev server verified, initial commit pushed.
-2026-07-05: Completed 1.2 — Switched to Tailwind CSS v4 using the official @tailwindcss/vite plugin, verified compilation.
-2026-07-05: Completed 1.3 — Defined the full design-token color palette via a v4 @theme block, restored class-based dark mode via @custom-variant, verified both modes.
-2026-07-05: Completed 1.4 — Added Inter font via Google Fonts links in index.html, wired --font-sans in the @theme block, applied to body via @layer base, verified font loading and computed styles. Committed and pushed.
+2026-07-05: Completed 1.2 — Switched to Tailwind CSS v4 using the official @tailwindcss/vite plugin.
+2026-07-05: Completed 1.3 — Defined the full design-token color palette via @theme, restored class-based dark mode.
+2026-07-05: Completed 1.4 — Added Inter font, wired --font-sans.
+2026-07-05: Completed 1.5 — Initialized shadcn/ui (Base/Vega), resolved an import-alias error by adding jsconfig.json and fixing vite.config.js for ESM compatibility, verified Button component renders correctly.
+2026-07-05: Completed 1.6 — Installed Recharts, Lucide React, Auto Animate, Sonner, and React Router as dependencies, verified clean install and dev server boot. Committed and pushed.
 
 15. KNOWN ISSUES AND OPEN QUESTIONS
 
 Design system was extracted from only 3 desktop Stitch screens with no native mobile designs exported — sub-768px experience must be built net-new.
 Styling inconsistencies flagged in the source export still need resolving during build (Section 10): background token mismatch, input padding/radius inconsistency, sticky vs. fixed header approach.
 Icon buttons (40×40px) and pagination buttons (32×32px) fall below the 44×44px touch target minimum — fix on mobile breakpoints.
-shadcn/ui's default init flow assumes a tailwind.config.js exists in some CLI versions — when reaching subtask 1.5 (next), confirm the CLI supports v4's CSS-first @theme setup, or manually wire components.json to reference the tokens already defined in src/index.css.
-Not yet decided: whether /transactions and /goals get dedicated routes (React Router) or stay as in-page scroll sections.
+shadcn's init appended its own CSS variable naming convention (Vega preset defaults) alongside our custom tokens in src/index.css — both currently coexist fine, but may need consolidation later if visual conflicts appear.
+Not yet decided: whether /transactions and /goals get dedicated routes (React Router, now installed) or stay as in-page scroll sections.
 Still open: confirm whether the GitHub repo/Vercel project should later be moved under an org account.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
