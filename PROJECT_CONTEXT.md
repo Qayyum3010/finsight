@@ -217,35 +217,41 @@ Phase 17 — Post-Launch: Add Vercel Analytics, final README pass (description, 
 1.2 — Installed Tailwind CSS v4 via @tailwindcss/vite, registered plugin, verified compilation
 1.3 — Added the full design-token color palette via a v4 @theme block, dark-mode overrides under .dark, restored class-based dark mode via @custom-variant
 1.4 — Added Inter font via Google Fonts links, wired --font-sans in @theme, applied to body via @layer base
-1.5 — Initialized shadcn/ui (Base library, Vega preset). Hit and fixed an import-alias resolution error: added jsconfig.json with @/_ → ./src/_ path mapping, and updated vite.config.js to resolve the @ alias via path.resolve — using fileURLToPath(import.meta.url) instead of \_\_dirname since vite.config.js runs as an ES module. Re-ran init successfully, generated components.json, src/lib/utils.js, src/components/ui/button.jsx, and shadcn's CSS variables appended to src/index.css. Verified the Button renders correctly alongside existing custom tokens with no console errors or warnings. Committed and pushed.
-1.6 — Installed recharts, lucide-react, @formkit/auto-animate, sonner, and react-router-dom as dependencies. Verified all appear in package.json and npm run dev still runs cleanly. Committed and pushed.
+1.5 — Initialized shadcn/ui (Base library, Vega preset), resolved an import-alias error via jsconfig.json and an ESM-safe vite.config.js fix, verified Button component
+1.6 — Installed Recharts, Lucide React, Auto Animate, Sonner, and React Router as dependencies
+1.7 — Created src/data/, src/hooks/, src/context/, src/pages/ folders with .gitkeep placeholders
+1.8 — Added .prettierrc (semi, singleQuote, trailingComma: es5, tabWidth 2, printWidth 100) and .prettierignore, installed Prettier as a dev dependency. Vite's default flat eslint.config.js (from scaffold) was kept as-is and extended with an override disabling react-refresh/only-export-components for src/components/ui/**, since shadcn's generated button.jsx intentionally exports both a component and a buttonVariants helper from the same file. Verified npm run lint reports zero errors after the fix. Committed and pushed.
 
 Current subtask:
 
-ID: 1.7
-Title: Create folder structure
-Goal: Create empty folders src/components/, src/data/, src/hooks/, src/context/, src/lib/, src/pages/ (note: src/components/ui/ and src/lib/utils.js already exist from shadcn init in 1.5).
-Files involved: folder structure only
+ID: 1.9
+Title: Commit full tooling setup
+Goal: Stage and commit Tailwind, shadcn, and dependency installs as a consolidated checkpoint commit before moving into Phase 5.
+Files involved: package.json, src/index.css, components.json, vite.config.js
 
 Next subtask:
 
-ID: 1.8
-Title: Configure Prettier and ESLint
-Goal: Create a .prettierrc with standard settings, verify/adjust the default Vite ESLint config for React.
-Files involved: .prettierrc, .eslintrc.cjs (or eslint.config.js)
+ID: 5.1.1
+Title: Build mock data generator utility
+Goal: Write a function that generates randomized-but-realistic transactions with seeded randomness.
+Files involved: src/lib/mockDataGenerator.js
 
 13. ACTIVE CODEBASE
 
-vite.config.js — includes react() and tailwindcss() plugins, plus @ → src/ alias resolution using fileURLToPath(import.meta.url) (ESM-safe, no \_\_dirname)
-jsconfig.json — @/_ → ./src/_ path mapping for editor/tooling support (no baseUrl, avoiding the TS6 deprecation warning)
+vite.config.js — includes react() and tailwindcss() plugins, plus @ → src/ alias resolution using fileURLToPath(import.meta.url)
+jsconfig.json — @/* → ./src/* path mapping
 index.html — includes Google Fonts links for Inter, title "FinSight"
-src/index.css — contains our custom @theme block (color tokens + --font-sans), @custom-variant dark, .dark overrides, @layer base font rule, plus shadcn's own CSS variables (Vega preset) appended by the init CLI
+src/index.css — custom @theme block (color tokens + --font-sans), @custom-variant dark, .dark overrides, @layer base font rule, plus shadcn's Vega-preset CSS variables
 components.json — shadcn/ui config (Base library, Vega preset)
-src/lib/utils.js — shadcn's cn() class-merging utility
-src/components/ui/button.jsx — shadcn Button component
-src/App.jsx — temporary test rendering the token-test card + shadcn Button together; will be replaced with real app structure in Phase 5/7
+src/lib/utils.js — shadcn's cn() utility
+src/components/ui/button.jsx — shadcn Button component (lint override applied for its export pattern)
+eslint.config.js — Vite's default flat config, extended with an override disabling react-refresh/only-export-components for src/components/ui/**
+.prettierrc — semi, singleQuote, trailingComma: es5, tabWidth 2, printWidth 100
+.prettierignore — excludes dist, node_modules, package-lock.json
+src/data/, src/hooks/, src/context/, src/pages/ — empty folders with .gitkeep placeholders
+src/App.jsx — temporary test rendering the token-test card + shadcn Button; will be replaced with real app structure in Phase 5/7
 src/main.jsx — confirmed importing ./index.css; otherwise still Vite default
-package.json — now includes recharts, lucide-react, @formkit/auto-animate, sonner, react-router-dom as dependencies
+package.json — includes recharts, lucide-react, @formkit/auto-animate, sonner, react-router-dom, and now prettier (dev)
 No tailwind.config.js or postcss.config.js
 
 14. SESSION LOG
@@ -257,15 +263,18 @@ No tailwind.config.js or postcss.config.js
 2026-07-05: Completed 1.2 — Switched to Tailwind CSS v4 using the official @tailwindcss/vite plugin.
 2026-07-05: Completed 1.3 — Defined the full design-token color palette via @theme, restored class-based dark mode.
 2026-07-05: Completed 1.4 — Added Inter font, wired --font-sans.
-2026-07-05: Completed 1.5 — Initialized shadcn/ui (Base/Vega), resolved an import-alias error by adding jsconfig.json and fixing vite.config.js for ESM compatibility, verified Button component renders correctly.
-2026-07-05: Completed 1.6 — Installed Recharts, Lucide React, Auto Animate, Sonner, and React Router as dependencies, verified clean install and dev server boot. Committed and pushed.
+2026-07-05: Completed 1.5 — Initialized shadcn/ui (Base/Vega), resolved import-alias/ESM issues, verified Button component.
+2026-07-05: Completed 1.6 — Installed Recharts, Lucide React, Auto Animate, Sonner, React Router.
+2026-07-05: Completed 1.7 — Created remaining folder structure with .gitkeep placeholders.
+2026-07-05: Completed 1.8 — Added Prettier config and ignore file; fixed a lint error in shadcn's button.jsx by scoping an ESLint override to src/components/ui/** rather than editing the generated file directly. Verified clean lint run. Committed and pushed.
 
 15. KNOWN ISSUES AND OPEN QUESTIONS
 
 Design system was extracted from only 3 desktop Stitch screens with no native mobile designs exported — sub-768px experience must be built net-new.
 Styling inconsistencies flagged in the source export still need resolving during build (Section 10): background token mismatch, input padding/radius inconsistency, sticky vs. fixed header approach.
 Icon buttons (40×40px) and pagination buttons (32×32px) fall below the 44×44px touch target minimum — fix on mobile breakpoints.
-shadcn's init appended its own CSS variable naming convention (Vega preset defaults) alongside our custom tokens in src/index.css — both currently coexist fine, but may need consolidation later if visual conflicts appear.
+shadcn's init appended its own CSS variable naming convention (Vega preset defaults) alongside our custom tokens in src/index.css — coexisting fine so far, may need consolidation later.
+Any future shadcn-generated file that exports both a component and a helper (like button.jsx did) will need the same src/components/ui/** lint override — already scoped broadly enough to cover this automatically, but worth remembering why that override exists.
 Not yet decided: whether /transactions and /goals get dedicated routes (React Router, now installed) or stay as in-page scroll sections.
 Still open: confirm whether the GitHub repo/Vercel project should later be moved under an org account.
 
