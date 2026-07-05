@@ -24,55 +24,55 @@
 
 [x] 1.1.1 — Scaffold Vite React app — Run `npm create vite@latest . -- --template react` inside the cloned repo folder — Files: `package.json`, `vite.config.js`, `src/main.jsx`, `src/App.jsx`, `index.html` — Done when: `npm install && npm run dev` starts a working default Vite page — Dependency: 0.3.2
 
-[] 1.1.2 — Commit initial scaffold — Stage and commit the raw Vite scaffold — Files: all generated files — Done when: `git log` shows the initial commit and it's pushed to GitHub — Dependency: 1.1.1
+[x] 1.1.2 — Commit initial scaffold — Stage and commit the raw Vite scaffold — Files: all generated files — Done when: `git log` shows the initial commit and it's pushed to GitHub — Dependency: 1.1.1
 
-[] 1.2.1 — Install Tailwind dependencies — Run `npm install -D tailwindcss postcss autoprefixer` — Files: `package.json` — Done when: packages appear in `devDependencies` — Dependency: 1.1.1
+[x] 1.2.1 — Install Tailwind dependencies — Run `npm install -D tailwindcss postcss autoprefixer` — Files: `package.json` — Done when: packages appear in `devDependencies` — Dependency: 1.1.1
 
-[] 1.2.2 — Initialize Tailwind config files — Run `npx tailwindcss init -p` — Files: `tailwind.config.js`, `postcss.config.js` — Done when: both files exist with default content — Dependency: 1.2.1
+[x] 1.2.2 — Initialize Tailwind config files — Run `npx tailwindcss init -p` — Files: `tailwind.config.js`, `postcss.config.js` — Done when: both files exist with default content — Dependency: 1.2.1
 
-[] 1.2.3 — Set Tailwind content paths — Edit `content` array to include `./index.html` and `./src/**/*.{js,jsx}` — Files: `tailwind.config.js` — Done when: Tailwind classes applied in a test div actually render — Dependency: 1.2.2
+[x] 1.2.3 — Set Tailwind content paths — Edit `content` array to include `./index.html` and `./src/**/*.{js,jsx}` — Files: `tailwind.config.js` — Done when: Tailwind classes applied in a test div actually render — Dependency: 1.2.2
 
-[] 1.2.4 — Enable class-based dark mode — Add `darkMode: 'class'` to Tailwind config — Files: `tailwind.config.js` — Done when: config file shows the setting saved — Dependency: 1.2.2
+[x] 1.2.4 — Enable class-based dark mode — Add `darkMode: 'class'` to Tailwind config — Files: `tailwind.config.js` — Done when: config file shows the setting saved — Dependency: 1.2.2
 
-[ ] 1.2.5 — Add Tailwind directives to CSS — Add `@tailwind base; @tailwind components; @tailwind utilities;` to main CSS file — Files: `src/index.css` — Done when: a test Tailwind utility class (e.g. `bg-red-500`) visibly styles an element in the browser — Dependency: 1.2.3
+[x] 1.2.5 — Add Tailwind directives to CSS — Add `@tailwind base; @tailwind components; @tailwind utilities;` to main CSS file — Files: `src/index.css` — Done when: a test Tailwind utility class (e.g. `bg-red-500`) visibly styles an element in the browser — Dependency: 1.2.3
 
-[ ] 1.3.1 — Add color tokens to Tailwind theme — Extend `theme.extend.colors` with primary, secondary, accent, background, surface, text-primary, text-secondary, border, error, success, warning using exact hex values — Files: `tailwind.config.js` — Done when: a test element using `bg-primary` renders as #2563EB — Dependency: 1.2.4
+[x] 1.3.1 — Add color tokens to Tailwind theme — Extend `theme.extend.colors` with primary, secondary, accent, background, surface, text-primary, text-secondary, border, error, success, warning using exact hex values — Files: `tailwind.config.js` — Done when: a test element using `bg-primary` renders as #2563EB — Dependency: 1.2.4
 
-[ ] 1.4.1 — Add Inter font via CDN link — Add Google Fonts `<link>` tag for Inter (weights 400,500,600,700) to HTML head — Files: `index.html` — Done when: viewing page source shows the font link and Network tab shows font loading — Dependency: 1.1.1
+[x] 1.4.1 — Add Inter font via CDN link — Add Google Fonts `<link>` tag for Inter (weights 400,500,600,700) to HTML head — Files: `index.html` — Done when: viewing page source shows the font link and Network tab shows font loading — Dependency: 1.1.1
 
-[ ] 1.4.2 — Set Inter as Tailwind default font — Add `fontFamily.sans = ['Inter', 'sans-serif']` to Tailwind theme — Files: `tailwind.config.js` — Done when: default body text visibly renders in Inter — Dependency: 1.4.1, 1.3.1
+[x] 1.4.2 — Set Inter as Tailwind default font — Add `fontFamily.sans = ['Inter', 'sans-serif']` to Tailwind theme — Files: `tailwind.config.js` — Done when: default body text visibly renders in Inter — Dependency: 1.4.1, 1.3.1
 
-[ ] 1.5.1 — Initialize shadcn/ui — Run `npx shadcn@latest init`, choosing Tailwind CSS variables and matching existing config — Files: `components.json`, `src/lib/utils.js` — Done when: init completes without errors — Dependency: 1.3.1
+[x] 1.5.1 — Initialize shadcn/ui — Run `npx shadcn@latest init`, choosing Tailwind CSS variables and matching existing config — Files: `components.json`, `src/lib/utils.js` — Done when: init completes without errors — Dependency: 1.3.1
 
-[ ] 1.5.2 — Add first shadcn component (Button) — Run `npx shadcn@latest add button` to test the pipeline works — Files: `src/components/ui/button.jsx` — Done when: importing and rendering `<Button>` shows a styled button — Dependency: 1.5.1
+[x] 1.5.2 — Add first shadcn component (Button) — Run `npx shadcn@latest add button` to test the pipeline works — Files: `src/components/ui/button.jsx` — Done when: importing and rendering `<Button>` shows a styled button — Dependency: 1.5.1
 
-[ ] 1.6.1 — Install Recharts — Run `npm install recharts` — Files: `package.json` — Done when: package appears in `dependencies` — Dependency: 1.1.1
+[x] 1.6.1 — Install Recharts — Run `npm install recharts` — Files: `package.json` — Done when: package appears in `dependencies` — Dependency: 1.1.1
 
-[ ] 1.6.2 — Install Lucide React — Run `npm install lucide-react` — Files: `package.json` — Done when: package appears in `dependencies` — Dependency: 1.1.1
+[x] 1.6.2 — Install Lucide React — Run `npm install lucide-react` — Files: `package.json` — Done when: package appears in `dependencies` — Dependency: 1.1.1
 
-[ ] 1.6.3 — Install Auto Animate — Run `npm install @formkit/auto-animate` — Files: `package.json` — Done when: package appears in `dependencies` — Dependency: 1.1.1
+[x] 1.6.3 — Install Auto Animate — Run `npm install @formkit/auto-animate` — Files: `package.json` — Done when: package appears in `dependencies` — Dependency: 1.1.1
 
-[ ] 1.6.4 — Install Sonner — Run `npm install sonner` — Files: `package.json` — Done when: package appears in `dependencies` — Dependency: 1.1.1
+[x] 1.6.4 — Install Sonner — Run `npm install sonner` — Files: `package.json` — Done when: package appears in `dependencies` — Dependency: 1.1.1
 
-[ ] 1.6.5 — Install React Router — Run `npm install react-router-dom` — Files: `package.json` — Done when: package appears in `dependencies` — Dependency: 1.1.1
+[x] 1.6.5 — Install React Router — Run `npm install react-router-dom` — Files: `package.json` — Done when: package appears in `dependencies` — Dependency: 1.1.1
 
-[ ] 1.7.1 — Create folder structure — Create empty folders `src/components/`, `src/data/`, `src/hooks/`, `src/context/`, `src/lib/`, `src/pages/` — Files: folder structure only (add `.gitkeep` if needed) — Done when: all folders exist and are visible in VS Code explorer — Dependency: 1.1.1
+[x] 1.7.1 — Create folder structure — Create empty folders `src/components/`, `src/data/`, `src/hooks/`, `src/context/`, `src/lib/`, `src/pages/` — Files: folder structure only (add `.gitkeep` if needed) — Done when: all folders exist and are visible in VS Code explorer — Dependency: 1.1.1
 
-[ ] 1.8.1 — Configure Prettier — Create Prettier config with standard settings (semi, singleQuote, etc.) — Files: `.prettierrc` — Done when: running `npx prettier --check src/` respects the config — Dependency: 1.1.1
+[x] 1.8.1 — Configure Prettier — Create Prettier config with standard settings (semi, singleQuote, etc.) — Files: `.prettierrc` — Done when: running `npx prettier --check src/` respects the config — Dependency: 1.1.1
 
-[ ] 1.8.2 — Configure ESLint basics — Verify/adjust default Vite ESLint config for React — Files: `.eslintrc.cjs` (or `eslint.config.js`) — Done when: `npm run lint` runs without config errors — Dependency: 1.1.1
+[x] 1.8.2 — Configure ESLint basics — Verify/adjust default Vite ESLint config for React — Files: `.eslintrc.cjs` (or `eslint.config.js`) — Done when: `npm run lint` runs without config errors — Dependency: 1.1.1
 
-[ ] 1.9.1 — Commit full tooling setup — Stage and commit Tailwind, shadcn, and dependency installs — Files: `package.json`, `tailwind.config.js`, `postcss.config.js`, `components.json` — Done when: pushed to GitHub `main` branch — Dependency: 1.2.5, 1.5.2, 1.6.5, 1.7.1, 1.8.2
+[x] 1.9.1 — Commit full tooling setup — Stage and commit Tailwind, shadcn, and dependency installs — Files: `package.json`, `tailwind.config.js`, `postcss.config.js`, `components.json` — Done when: pushed to GitHub `main` branch — Dependency: 1.2.5, 1.5.2, 1.6.5, 1.7.1, 1.8.2
 
 ━━━
 ## PHASE 5: Frontend Foundation
 ━━━
 
-[ ] 5.1.1 — Build mock data generator utility — Write a function that generates randomized-but-realistic transactions with seeded randomness — Files: `src/lib/mockDataGenerator.js` — Done when: calling the function returns an array of 150-300 transaction objects matching the defined schema — Dependency: 1.7.1
+[x] 5.1.1 — Build mock data generator utility — Write a function that generates randomized-but-realistic transactions with seeded randomness — Files: `src/lib/mockDataGenerator.js` — Done when: calling the function returns an array of 150-300 transaction objects matching the defined schema — Dependency: 1.7.1
 
-[ ] 5.1.2 — Generate transactions dataset — Call the generator to produce and export a static 12-month transactions array — Files: `src/data/transactions.js` — Done when: importing the file logs a populated array with realistic dates/amounts — Dependency: 5.1.1
+[x] 5.1.2 — Generate transactions dataset — Call the generator to produce and export a static 12-month transactions array — Files: `src/data/transactions.js` — Done when: importing the file logs a populated array with realistic dates/amounts — Dependency: 5.1.1
 
-[ ] 5.1.3 — Create goals mock data — Manually write 3 goal objects matching the schema (Emergency Fund, Vacation, New Laptop) — Files: `src/data/goals.js` — Done when: importing the file returns 3 correctly-shaped objects — Dependency: 1.7.1
+[x] 5.1.3 — Create goals mock data — Manually write 3 goal objects matching the schema (Emergency Fund, Vacation, New Laptop) — Files: `src/data/goals.js` — Done when: importing the file returns 3 correctly-shaped objects — Dependency: 1.7.1
 
 [ ] 5.2.1 — Build ThemeContext — Create context + provider managing `theme` state ('light'/'dark') with a toggle function — Files: `src/context/ThemeContext.jsx` — Done when: a test component can read and toggle theme value via `useContext` — Dependency: 1.7.1
 
