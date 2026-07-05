@@ -120,15 +120,15 @@
 
 [x] 7A.1.1 — Build SummaryCard component — Create a reusable card showing label, value, and trend indicator (arrow icon + %) — Files: `src/components/SummaryCard.jsx` — Done when: passing different props renders correctly styled cards matching Stitch design — Dependency: 1.5.2, 1.6.2
 
-[ ] 7A.1.2 — Wire 4 SummaryCards to useSummaryTotals — Render 4 SummaryCard instances in a grid, fed by the hook's output — Files: `src/pages/Dashboard.jsx` — Done when: cards display correct real values from mock data — Dependency: 7A.1.1, 5.7.2
+[x] 7A.1.2 — Wire 4 SummaryCards to useSummaryTotals — Render 4 SummaryCard instances in a grid, fed by the hook's output — Files: `src/pages/Dashboard.jsx` — Done when: cards display correct real values from mock data — Dependency: 7A.1.1, 5.7.2
 
-[ ] 7A.1.3 — Build TrendChart component — Create a Recharts `<LineChart>` inside `<ResponsiveContainer>` plotting income vs expenses over time — Files: `src/components/TrendChart.jsx` — Done when: chart renders two correctly colored lines with mock data — Dependency: 1.6.1, 5.1.2
+[x] 7A.1.3 — Build TrendChart component — Create a Recharts `<LineChart>` inside `<ResponsiveContainer>` plotting income vs expenses over time — Files: `src/components/TrendChart.jsx` — Done when: chart renders two correctly colored lines with mock data — Dependency: 1.6.1, 5.1.2
 
-[ ] 7A.1.4 — Build CategoryDonutChart component — Create a Recharts `<PieChart>` donut with legend list showing category, %, and amount — Files: `src/components/CategoryDonutChart.jsx` — Done when: donut renders with correct segments and legend matches data — Dependency: 1.6.1, 5.1.2
+[x] 7A.1.4 — Build CategoryDonutChart component — Create a Recharts `<PieChart>` donut with legend list showing category, %, and amount — Files: `src/components/CategoryDonutChart.jsx` — Done when: donut renders with correct segments and legend matches data — Dependency: 1.6.1, 5.1.2
 
-[ ] 7A.1.5 — Assemble Dashboard desktop layout — Compose Header (already global), SummaryCards row, charts row (Trend + Donut side by side), placeholders for transactions/goals sections — Files: `src/pages/Dashboard.jsx` — Done when: desktop (1440px) view visually matches the Stitch dashboard mockup — Dependency: 7A.1.2, 7A.1.3, 7A.1.4
+[x] 7A.1.5 — Assemble Dashboard desktop layout — Compose Header (already global), SummaryCards row, charts row (Trend + Donut side by side), placeholders for transactions/goals sections — Files: `src/pages/Dashboard.jsx` — Done when: desktop (1440px) view visually matches the Stitch dashboard mockup — Dependency: 7A.1.2, 7A.1.3, 7A.1.4
 
-[ ] 7A.2.1 — Make Dashboard responsive — Add Tailwind responsive classes: summary cards 4-col→2-col→1-col, charts side-by-side→stacked — Files: `src/pages/Dashboard.jsx` — Done when: layout looks correct with no overflow at 1440px, 768px, and 375px widths — Dependency: 7A.1.5
+[x] 7A.2.1 — Make Dashboard responsive — Add Tailwind responsive classes: summary cards 4-col→2-col→1-col, charts side-by-side→stacked — Files: `src/pages/Dashboard.jsx` — Done when: layout looks correct with no overflow at 1440px, 768px, and 375px widths — Dependency: 7A.1.5
 
 ### 7B. Transactions
 

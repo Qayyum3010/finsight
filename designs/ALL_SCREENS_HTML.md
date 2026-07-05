@@ -2,7 +2,6 @@ STITCH APP SOURCE CODE EXPORT
 Generated: 07/04/2026 22:55:49
 ====================================================================================================
 
-
 ####################################################################################################
 SCREEN: finsight_dashboard
 SOURCE: C:\Projects\FINSIGHT\stitch_finsight_finance_dashboard\finsight_dashboard\code.html
@@ -517,10 +516,10 @@ SOURCE: C:\Projects\FINSIGHT\stitch_finsight_finance_dashboard\finsight_dashboar
             });
         });
     </script>
+
 </body></html>
 
-----------------------------------------------------------------------------------------------------
-
+---
 
 ####################################################################################################
 SCREEN: savings_goals
@@ -886,8 +885,7 @@ SOURCE: C:\Projects\FINSIGHT\stitch_finsight_finance_dashboard\savings_goals\cod
     </script>
 </body></html>
 
-----------------------------------------------------------------------------------------------------
-
+---
 
 ####################################################################################################
 SCREEN: transactions_history
@@ -1374,5 +1372,4 @@ SOURCE: C:\Projects\FINSIGHT\stitch_finsight_finance_dashboard\transactions_hist
     </script>
 </body></html>
 
-----------------------------------------------------------------------------------------------------
-
+---

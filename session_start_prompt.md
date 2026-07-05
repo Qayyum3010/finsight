@@ -125,4 +125,4 @@ I have pasted two files above:
 - These are the only two situations where you stop before delivering Part 2
 - For all other cases: make the best decision and proceed — note assumptions
   made
-  Now output Part 1, Part 2, and Part 3 in that order.
+  Now output Part 1, Part 2, and Part 3 in that order
