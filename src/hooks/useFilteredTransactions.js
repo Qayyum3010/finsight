@@ -32,15 +32,28 @@ function getRangeStartDate(dateRange, referenceDate = new Date()) {
  *
  * @param {Array} transactions - full transactions dataset
  * @param {Object} params
- * @param {string} params.dateRange - one of DATE_RANGE_OPTIONS
- * @param {string} params.search - free-text search on merchant name
- * @param {string} params.category - category name, or "All Categories"
- * @param {{ field: 'date'|'amount', direction: 'asc'|'desc' }} [params.sort]
+ * @param {string} [params.dateRange] - one of DATE_RANGE_OPTIONS
+ * @param {string} [params.search] - free-text search on merchant name
+ * @param {string} [params.category] - category name, or "All Categories"
+ * @param {string} [params.type] - "All Types" | "Income" | "Expense"
+ * @param {number} [params.minAmount] - absolute-value floor (inclusive)
+ * @param {number} [params.maxAmount] - absolute-value ceiling (inclusive)
+ * @param {'date'|'amount'} [params.sortBy]
+ * @param {'asc'|'desc'} [params.sortDir]
  * @returns {Array} filtered and sorted transactions
  */
 export function useFilteredTransactions(
   transactions,
-  { dateRange = 'All Time', search = '', category = 'All Categories', sort } = {}
+  {
+    dateRange = 'All Time',
+    search = '',
+    category = 'All Categories',
+    type = 'All Types',
+    minAmount,
+    maxAmount,
+    sortBy = 'date',
+    sortDir = 'desc',
+  } = {}
 ) {
   return useMemo(() => {
     let result = transactions ?? [];
@@ -62,16 +75,28 @@ export function useFilteredTransactions(
       result = result.filter((t) => t.category === category);
     }
 
-    // Sort
-    if (sort?.field) {
-      const { field, direction = 'asc' } = sort;
-      const multiplier = direction === 'desc' ? -1 : 1;
+    // Type filter (Income / Expense)
+    if (type && type !== 'All Types') {
+      const wantIncome = type === 'Income';
+      result = result.filter((t) => t.amount > 0 === wantIncome);
+    }
 
+    // Amount range filter (compares absolute value, since expenses are negative)
+    if (typeof minAmount === 'number' && !Number.isNaN(minAmount)) {
+      result = result.filter((t) => Math.abs(t.amount) >= minAmount);
+    }
+    if (typeof maxAmount === 'number' && !Number.isNaN(maxAmount)) {
+      result = result.filter((t) => Math.abs(t.amount) <= maxAmount);
+    }
+
+    // Sort
+    if (sortBy) {
+      const multiplier = sortDir === 'asc' ? 1 : -1;
       result = [...result].sort((a, b) => {
-        if (field === 'date') {
+        if (sortBy === 'date') {
           return (new Date(a.date) - new Date(b.date)) * multiplier;
         }
-        if (field === 'amount') {
+        if (sortBy === 'amount') {
           return (a.amount - b.amount) * multiplier;
         }
         return 0;
@@ -79,5 +104,5 @@ export function useFilteredTransactions(
     }
 
     return result;
-  }, [transactions, dateRange, search, category, sort]);
+  }, [transactions, dateRange, search, category, type, minAmount, maxAmount, sortBy, sortDir]);
 }

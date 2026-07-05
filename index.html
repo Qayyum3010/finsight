@@ -12,6 +12,22 @@
       rel="stylesheet"
     />
 
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem('finsight-theme');
+          var theme =
+            stored ||
+            (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+          if (theme === 'dark') {
+            document.documentElement.classList.add('dark');
+          }
+        } catch (e) {
+          // localStorage unavailable (e.g. private browsing) — fall back silently to light mode
+        }
+      })();
+    </script>
+
     <title>FinSight</title>
   </head>
   <body>

@@ -1,0 +1,2572 @@
+========== REACT CORE EXPORT ==========
+Project Root: C:\Projects\FINSIGHT
+Generated On: 07/05/2026 09:32:30
+=======================================
+
+===== FILE: index.html =====
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem('finsight-theme');
+          var theme =
+            stored ||
+            (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+          if (theme === 'dark') {
+            document.documentElement.classList.add('dark');
+          }
+        } catch (e) {
+          // localStorage unavailable (e.g. private browsing) — fall back silently to light mode
+        }
+      })();
+    </script>
+
+    <title>FinSight</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
+
+
+===== FILE: package.json =====
+{
+  "name": "finsight",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@base-ui/react": "^1.6.0",
+    "@fontsource-variable/inter": "^5.2.8",
+    "@formkit/auto-animate": "^0.9.0",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "lucide-react": "^1.23.0",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "react-router-dom": "^7.18.1",
+    "recharts": "^3.9.2",
+    "shadcn": "^4.13.0",
+    "sonner": "^2.0.7",
+    "tailwind-merge": "^3.6.0",
+    "tw-animate-css": "^1.4.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@tailwindcss/vite": "^4.3.2",
+    "@types/node": "^26.1.0",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.3",
+    "eslint": "^10.6.0",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "eslint-plugin-react-refresh": "^0.5.3",
+    "globals": "^17.7.0",
+    "prettier": "^3.9.4",
+    "tailwindcss": "^4.3.2",
+    "vite": "^8.1.1"
+  }
+}
+
+
+===== FILE: public\favicon.svg =====
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="46" fill="none" viewBox="0 0 48 46"><path fill="#863bff" d="M25.946 44.938c-.664.845-2.021.375-2.021-.698V33.937a2.26 2.26 0 0 0-2.262-2.262H10.287c-.92 0-1.456-1.04-.92-1.788l7.48-10.471c1.07-1.497 0-3.578-1.842-3.578H1.237c-.92 0-1.456-1.04-.92-1.788L10.013.474c.214-.297.556-.474.92-.474h28.894c.92 0 1.456 1.04.92 1.788l-7.48 10.471c-1.07 1.498 0 3.579 1.842 3.579h11.377c.943 0 1.473 1.088.89 1.83L25.947 44.94z" style="fill:#863bff;fill:color(display-p3 .5252 .23 1);fill-opacity:1"/><mask id="a" width="48" height="46" x="0" y="0" maskUnits="userSpaceOnUse" style="mask-type:alpha"><path fill="#000" d="M25.842 44.938c-.664.844-2.021.375-2.021-.698V33.937a2.26 2.26 0 0 0-2.262-2.262H10.183c-.92 0-1.456-1.04-.92-1.788l7.48-10.471c1.07-1.498 0-3.579-1.842-3.579H1.133c-.92 0-1.456-1.04-.92-1.787L9.91.473c.214-.297.556-.474.92-.474h28.894c.92 0 1.456 1.04.92 1.788l-7.48 10.471c-1.07 1.498 0 3.578 1.842 3.578h11.377c.943 0 1.473 1.088.89 1.832L25.843 44.94z" style="fill:#000;fill-opacity:1"/></mask><g mask="url(#a)"><g filter="url(#b)"><ellipse cx="5.508" cy="14.704" fill="#ede6ff" rx="5.508" ry="14.704" style="fill:#ede6ff;fill:color(display-p3 .9275 .9033 1);fill-opacity:1" transform="matrix(.00324 1 1 -.00324 -4.47 31.516)"/></g><g filter="url(#c)"><ellipse cx="10.399" cy="29.851" fill="#ede6ff" rx="10.399" ry="29.851" style="fill:#ede6ff;fill:color(display-p3 .9275 .9033 1);fill-opacity:1" transform="matrix(.00324 1 1 -.00324 -39.328 7.883)"/></g><g filter="url(#d)"><ellipse cx="5.508" cy="30.487" fill="#7e14ff" rx="5.508" ry="30.487" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(89.814 -25.913 -14.639)scale(1 -1)"/></g><g filter="url(#e)"><ellipse cx="5.508" cy="30.599" fill="#7e14ff" rx="5.508" ry="30.599" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(89.814 -32.644 -3.334)scale(1 -1)"/></g><g filter="url(#f)"><ellipse cx="5.508" cy="30.599" fill="#7e14ff" rx="5.508" ry="30.599" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="matrix(.00324 1 1 -.00324 -34.34 30.47)"/></g><g filter="url(#g)"><ellipse cx="14.072" cy="22.078" fill="#ede6ff" rx="14.072" ry="22.078" style="fill:#ede6ff;fill:color(display-p3 .9275 .9033 1);fill-opacity:1" transform="rotate(93.35 24.506 48.493)scale(-1 1)"/></g><g filter="url(#h)"><ellipse cx="3.47" cy="21.501" fill="#7e14ff" rx="3.47" ry="21.501" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(89.009 28.708 47.59)scale(-1 1)"/></g><g filter="url(#i)"><ellipse cx="3.47" cy="21.501" fill="#7e14ff" rx="3.47" ry="21.501" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(89.009 28.708 47.59)scale(-1 1)"/></g><g filter="url(#j)"><ellipse cx=".387" cy="8.972" fill="#7e14ff" rx="4.407" ry="29.108" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(39.51 .387 8.972)"/></g><g filter="url(#k)"><ellipse cx="47.523" cy="-6.092" fill="#7e14ff" rx="4.407" ry="29.108" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(37.892 47.523 -6.092)"/></g><g filter="url(#l)"><ellipse cx="41.412" cy="6.333" fill="#47bfff" rx="5.971" ry="9.665" style="fill:#47bfff;fill:color(display-p3 .2799 .748 1);fill-opacity:1" transform="rotate(37.892 41.412 6.333)"/></g><g filter="url(#m)"><ellipse cx="-1.879" cy="38.332" fill="#7e14ff" rx="4.407" ry="29.108" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(37.892 -1.88 38.332)"/></g><g filter="url(#n)"><ellipse cx="-1.879" cy="38.332" fill="#7e14ff" rx="4.407" ry="29.108" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(37.892 -1.88 38.332)"/></g><g filter="url(#o)"><ellipse cx="35.651" cy="29.907" fill="#7e14ff" rx="4.407" ry="29.108" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(37.892 35.651 29.907)"/></g><g filter="url(#p)"><ellipse cx="38.418" cy="32.4" fill="#47bfff" rx="5.971" ry="15.297" style="fill:#47bfff;fill:color(display-p3 .2799 .748 1);fill-opacity:1" transform="rotate(37.892 38.418 32.4)"/></g></g><defs><filter id="b" width="60.045" height="41.654" x="-19.77" y="16.149" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="7.659"/></filter><filter id="c" width="90.34" height="51.437" x="-54.613" y="-7.533" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="7.659"/></filter><filter id="d" width="79.355" height="29.4" x="-49.64" y="2.03" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="e" width="79.579" height="29.4" x="-45.045" y="20.029" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="f" width="79.579" height="29.4" x="-43.513" y="21.178" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="g" width="74.749" height="58.852" x="15.756" y="-17.901" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="7.659"/></filter><filter id="h" width="61.377" height="25.362" x="23.548" y="2.284" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="i" width="61.377" height="25.362" x="23.548" y="2.284" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="j" width="56.045" height="63.649" x="-27.636" y="-22.853" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="k" width="54.814" height="64.646" x="20.116" y="-38.415" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="l" width="33.541" height="35.313" x="24.641" y="-11.323" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="m" width="54.814" height="64.646" x="-29.286" y="6.009" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="n" width="54.814" height="64.646" x="-29.286" y="6.009" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="o" width="54.814" height="64.646" x="8.244" y="-2.416" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="p" width="39.409" height="43.623" x="18.713" y="10.588" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter></defs></svg>
+
+===== FILE: public\icons.svg =====
+<svg xmlns="http://www.w3.org/2000/svg">
+  <symbol id="bluesky-icon" viewBox="0 0 16 17">
+    <g clip-path="url(#bluesky-clip)"><path fill="#08060d" d="M7.75 7.735c-.693-1.348-2.58-3.86-4.334-5.097-1.68-1.187-2.32-.981-2.74-.79C.188 2.065.1 2.812.1 3.251s.241 3.602.398 4.13c.52 1.744 2.367 2.333 4.07 2.145-2.495.37-4.71 1.278-1.805 4.512 3.196 3.309 4.38-.71 4.987-2.746.608 2.036 1.307 5.91 4.93 2.746 2.72-2.746.747-4.143-1.747-4.512 1.702.189 3.55-.4 4.07-2.145.156-.528.397-3.691.397-4.13s-.088-1.186-.575-1.406c-.42-.19-1.06-.395-2.741.79-1.755 1.24-3.64 3.752-4.334 5.099"/></g>
+    <defs><clipPath id="bluesky-clip"><path fill="#fff" d="M.1.85h15.3v15.3H.1z"/></clipPath></defs>
+  </symbol>
+  <symbol id="discord-icon" viewBox="0 0 20 19">
+    <path fill="#08060d" d="M16.224 3.768a14.5 14.5 0 0 0-3.67-1.153c-.158.286-.343.67-.47.976a13.5 13.5 0 0 0-4.067 0c-.128-.306-.317-.69-.476-.976A14.4 14.4 0 0 0 3.868 3.77C1.546 7.28.916 10.703 1.231 14.077a14.7 14.7 0 0 0 4.5 2.306q.545-.748.965-1.587a9.5 9.5 0 0 1-1.518-.74q.191-.14.372-.293c2.927 1.369 6.107 1.369 8.999 0q.183.152.372.294-.723.437-1.52.74.418.838.963 1.588a14.6 14.6 0 0 0 4.504-2.308c.37-3.911-.63-7.302-2.644-10.309m-9.13 8.234c-.878 0-1.599-.82-1.599-1.82 0-.998.705-1.82 1.6-1.82.894 0 1.614.82 1.599 1.82.001 1-.705 1.82-1.6 1.82m5.91 0c-.878 0-1.599-.82-1.599-1.82 0-.998.705-1.82 1.6-1.82.893 0 1.614.82 1.599 1.82 0 1-.706 1.82-1.6 1.82"/>
+  </symbol>
+  <symbol id="documentation-icon" viewBox="0 0 21 20">
+    <path fill="none" stroke="#aa3bff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.35" d="m15.5 13.333 1.533 1.322c.645.555.967.833.967 1.178s-.322.623-.967 1.179L15.5 18.333m-3.333-5-1.534 1.322c-.644.555-.966.833-.966 1.178s.322.623.966 1.179l1.534 1.321"/>
+    <path fill="none" stroke="#aa3bff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.35" d="M17.167 10.836v-4.32c0-1.41 0-2.117-.224-2.68-.359-.906-1.118-1.621-2.08-1.96-.599-.21-1.349-.21-2.848-.21-2.623 0-3.935 0-4.983.369-1.684.591-3.013 1.842-3.641 3.428C3 6.449 3 7.684 3 10.154v2.122c0 2.558 0 3.838.706 4.726q.306.383.713.671c.76.536 1.79.64 3.581.66"/>
+    <path fill="none" stroke="#aa3bff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.35" d="M3 10a2.78 2.78 0 0 1 2.778-2.778c.555 0 1.209.097 1.748-.047.48-.129.854-.503.982-.982.145-.54.048-1.194.048-1.749a2.78 2.78 0 0 1 2.777-2.777"/>
+  </symbol>
+  <symbol id="github-icon" viewBox="0 0 19 19">
+    <path fill="#08060d" fill-rule="evenodd" d="M9.356 1.85C5.05 1.85 1.57 5.356 1.57 9.694a7.84 7.84 0 0 0 5.324 7.44c.387.079.528-.168.528-.376 0-.182-.013-.805-.013-1.454-2.165.467-2.616-.935-2.616-.935-.349-.91-.864-1.143-.864-1.143-.71-.48.051-.48.051-.48.787.051 1.2.805 1.2.805.695 1.194 1.817.857 2.268.649.064-.507.27-.857.49-1.052-1.728-.182-3.545-.857-3.545-3.87 0-.857.31-1.558.8-2.104-.078-.195-.349-1 .077-2.078 0 0 .657-.208 2.14.805a7.5 7.5 0 0 1 1.946-.26c.657 0 1.328.092 1.946.26 1.483-1.013 2.14-.805 2.14-.805.426 1.078.155 1.883.078 2.078.502.546.799 1.247.799 2.104 0 3.013-1.818 3.675-3.558 3.87.284.247.528.714.528 1.454 0 1.052-.012 1.896-.012 2.156 0 .208.142.455.528.377a7.84 7.84 0 0 0 5.324-7.441c.013-4.338-3.48-7.844-7.773-7.844" clip-rule="evenodd"/>
+  </symbol>
+  <symbol id="social-icon" viewBox="0 0 20 20">
+    <path fill="none" stroke="#aa3bff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.35" d="M12.5 6.667a4.167 4.167 0 1 0-8.334 0 4.167 4.167 0 0 0 8.334 0"/>
+    <path fill="none" stroke="#aa3bff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.35" d="M2.5 16.667a5.833 5.833 0 0 1 8.75-5.053m3.837.474.513 1.035c.07.144.257.282.414.309l.93.155c.596.1.736.536.307.965l-.723.73a.64.64 0 0 0-.152.531l.207.903c.164.715-.213.991-.84.618l-.872-.52a.63.63 0 0 0-.577 0l-.872.52c-.624.373-1.003.094-.84-.618l.207-.903a.64.64 0 0 0-.152-.532l-.723-.729c-.426-.43-.289-.864.306-.964l.93-.156a.64.64 0 0 0 .412-.31l.513-1.034c.28-.562.735-.562 1.012 0"/>
+  </symbol>
+  <symbol id="x-icon" viewBox="0 0 19 19">
+    <path fill="#08060d" fill-rule="evenodd" d="M1.893 1.98c.052.072 1.245 1.769 2.653 3.77l2.892 4.114c.183.261.333.48.333.486s-.068.089-.152.183l-.522.593-.765.867-3.597 4.087c-.375.426-.734.834-.798.905a1 1 0 0 0-.118.148c0 .01.236.017.664.017h.663l.729-.83c.4-.457.796-.906.879-.999a692 692 0 0 0 1.794-2.038c.034-.037.301-.34.594-.675l.551-.624.345-.392a7 7 0 0 1 .34-.374c.006 0 .93 1.306 2.052 2.903l2.084 2.965.045.063h2.275c1.87 0 2.273-.003 2.266-.021-.008-.02-1.098-1.572-3.894-5.547-2.013-2.862-2.28-3.246-2.273-3.266.008-.019.282-.332 2.085-2.38l2-2.274 1.567-1.782c.022-.028-.016-.03-.65-.03h-.674l-.3.342a871 871 0 0 1-1.782 2.025c-.067.075-.405.458-.75.852a100 100 0 0 1-.803.91c-.148.172-.299.344-.99 1.127-.304.343-.32.358-.345.327-.015-.019-.904-1.282-1.976-2.808L6.365 1.85H1.8zm1.782.91 8.078 11.294c.772 1.08 1.413 1.973 1.425 1.984.016.017.241.02 1.05.017l1.03-.004-2.694-3.766L7.796 5.75 5.722 2.852l-1.039-.004-1.039-.004z" clip-rule="evenodd"/>
+  </symbol>
+</svg>
+
+
+===== FILE: src\App.css =====
+.counter {
+  font-size: 16px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: var(--accent);
+  background: var(--accent-bg);
+  border: 2px solid transparent;
+  transition: border-color 0.3s;
+  margin-bottom: 24px;
+
+  &:hover {
+    border-color: var(--accent-border);
+  }
+  &:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+}
+
+.hero {
+  position: relative;
+
+  .base,
+  .framework,
+  .vite {
+    inset-inline: 0;
+    margin: 0 auto;
+  }
+
+  .base {
+    width: 170px;
+    position: relative;
+    z-index: 0;
+  }
+
+  .framework,
+  .vite {
+    position: absolute;
+  }
+
+  .framework {
+    z-index: 1;
+    top: 34px;
+    height: 28px;
+    transform: perspective(2000px) rotateZ(300deg) rotateX(44deg) rotateY(39deg)
+      scale(1.4);
+  }
+
+  .vite {
+    z-index: 0;
+    top: 107px;
+    height: 26px;
+    width: auto;
+    transform: perspective(2000px) rotateZ(300deg) rotateX(40deg) rotateY(39deg)
+      scale(0.8);
+  }
+}
+
+#center {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  place-content: center;
+  place-items: center;
+  flex-grow: 1;
+
+  @media (max-width: 1024px) {
+    padding: 32px 20px 24px;
+    gap: 18px;
+  }
+}
+
+#next-steps {
+  display: flex;
+  border-top: 1px solid var(--border);
+  text-align: left;
+
+  & > div {
+    flex: 1 1 0;
+    padding: 32px;
+    @media (max-width: 1024px) {
+      padding: 24px 20px;
+    }
+  }
+
+  .icon {
+    margin-bottom: 16px;
+    width: 22px;
+    height: 22px;
+  }
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+#docs {
+  border-right: 1px solid var(--border);
+
+  @media (max-width: 1024px) {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+}
+
+#next-steps ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 8px;
+  margin: 32px 0 0;
+
+  .logo {
+    height: 18px;
+  }
+
+  a {
+    color: var(--text-h);
+    font-size: 16px;
+    border-radius: 6px;
+    background: var(--social-bg);
+    display: flex;
+    padding: 6px 12px;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    transition: box-shadow 0.3s;
+
+    &:hover {
+      box-shadow: var(--shadow);
+    }
+    .button-icon {
+      height: 18px;
+      width: 18px;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    margin-top: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    li {
+      flex: 1 1 calc(50% - 8px);
+    }
+
+    a {
+      width: 100%;
+      justify-content: center;
+      box-sizing: border-box;
+    }
+  }
+}
+
+#spacer {
+  height: 88px;
+  border-top: 1px solid var(--border);
+  @media (max-width: 1024px) {
+    height: 48px;
+  }
+}
+
+.ticks {
+  position: relative;
+  width: 100%;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: -4.5px;
+    border: 5px solid transparent;
+  }
+
+  &::before {
+    left: 0;
+    border-left-color: var(--border);
+  }
+  &::after {
+    right: 0;
+    border-right-color: var(--border);
+  }
+}
+
+
+===== FILE: src\App.jsx =====
+import { Routes, Route } from 'react-router-dom';
+import Dashboard from './pages/Dashboard.jsx';
+import TransactionsPage from './pages/TransactionsPage.jsx';
+import GoalsPage from './pages/GoalsPage.jsx';
+
+function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<Dashboard />} />
+      <Route path="/transactions" element={<TransactionsPage />} />
+      <Route path="/goals" element={<GoalsPage />} />
+    </Routes>
+  );
+}
+
+export default App;
+
+
+===== FILE: src\assets\react.svg =====
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--logos" width="35.93" height="32" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 228"><path fill="#00D8FF" d="M210.483 73.824a171.49 171.49 0 0 0-8.24-2.597c.465-1.9.893-3.777 1.273-5.621c6.238-30.281 2.16-54.676-11.769-62.708c-13.355-7.7-35.196.329-57.254 19.526a171.23 171.23 0 0 0-6.375 5.848a155.866 155.866 0 0 0-4.241-3.917C100.759 3.829 77.587-4.822 63.673 3.233C50.33 10.957 46.379 33.89 51.995 62.588a170.974 170.974 0 0 0 1.892 8.48c-3.28.932-6.445 1.924-9.474 2.98C17.309 83.498 0 98.307 0 113.668c0 15.865 18.582 31.778 46.812 41.427a145.52 145.52 0 0 0 6.921 2.165a167.467 167.467 0 0 0-2.01 9.138c-5.354 28.2-1.173 50.591 12.134 58.266c13.744 7.926 36.812-.22 59.273-19.855a145.567 145.567 0 0 0 5.342-4.923a168.064 168.064 0 0 0 6.92 6.314c21.758 18.722 43.246 26.282 56.54 18.586c13.731-7.949 18.194-32.003 12.4-61.268a145.016 145.016 0 0 0-1.535-6.842c1.62-.48 3.21-.974 4.76-1.488c29.348-9.723 48.443-25.443 48.443-41.52c0-15.417-17.868-30.326-45.517-39.844Zm-6.365 70.984c-1.4.463-2.836.91-4.3 1.345c-3.24-10.257-7.612-21.163-12.963-32.432c5.106-11 9.31-21.767 12.459-31.957c2.619.758 5.16 1.557 7.61 2.4c23.69 8.156 38.14 20.213 38.14 29.504c0 9.896-15.606 22.743-40.946 31.14Zm-10.514 20.834c2.562 12.94 2.927 24.64 1.23 33.787c-1.524 8.219-4.59 13.698-8.382 15.893c-8.067 4.67-25.32-1.4-43.927-17.412a156.726 156.726 0 0 1-6.437-5.87c7.214-7.889 14.423-17.06 21.459-27.246c12.376-1.098 24.068-2.894 34.671-5.345a134.17 134.17 0 0 1 1.386 6.193ZM87.276 214.515c-7.882 2.783-14.16 2.863-17.955.675c-8.075-4.657-11.432-22.636-6.853-46.752a156.923 156.923 0 0 1 1.869-8.499c10.486 2.32 22.093 3.988 34.498 4.994c7.084 9.967 14.501 19.128 21.976 27.15a134.668 134.668 0 0 1-4.877 4.492c-9.933 8.682-19.886 14.842-28.658 17.94ZM50.35 144.747c-12.483-4.267-22.792-9.812-29.858-15.863c-6.35-5.437-9.555-10.836-9.555-15.216c0-9.322 13.897-21.212 37.076-29.293c2.813-.98 5.757-1.905 8.812-2.773c3.204 10.42 7.406 21.315 12.477 32.332c-5.137 11.18-9.399 22.249-12.634 32.792a134.718 134.718 0 0 1-6.318-1.979Zm12.378-84.26c-4.811-24.587-1.616-43.134 6.425-47.789c8.564-4.958 27.502 2.111 47.463 19.835a144.318 144.318 0 0 1 3.841 3.545c-7.438 7.987-14.787 17.08-21.808 26.988c-12.04 1.116-23.565 2.908-34.161 5.309a160.342 160.342 0 0 1-1.76-7.887Zm110.427 27.268a347.8 347.8 0 0 0-7.785-12.803c8.168 1.033 15.994 2.404 23.343 4.08c-2.206 7.072-4.956 14.465-8.193 22.045a381.151 381.151 0 0 0-7.365-13.322Zm-45.032-43.861c5.044 5.465 10.096 11.566 15.065 18.186a322.04 322.04 0 0 0-30.257-.006c4.974-6.559 10.069-12.652 15.192-18.18ZM82.802 87.83a323.167 323.167 0 0 0-7.227 13.238c-3.184-7.553-5.909-14.98-8.134-22.152c7.304-1.634 15.093-2.97 23.209-3.984a321.524 321.524 0 0 0-7.848 12.897Zm8.081 65.352c-8.385-.936-16.291-2.203-23.593-3.793c2.26-7.3 5.045-14.885 8.298-22.6a321.187 321.187 0 0 0 7.257 13.246c2.594 4.48 5.28 8.868 8.038 13.147Zm37.542 31.03c-5.184-5.592-10.354-11.779-15.403-18.433c4.902.192 9.899.29 14.978.29c5.218 0 10.376-.117 15.453-.343c-4.985 6.774-10.018 12.97-15.028 18.486Zm52.198-57.817c3.422 7.8 6.306 15.345 8.596 22.52c-7.422 1.694-15.436 3.058-23.88 4.071a382.417 382.417 0 0 0 7.859-13.026a347.403 347.403 0 0 0 7.425-13.565Zm-16.898 8.101a358.557 358.557 0 0 1-12.281 19.815a329.4 329.4 0 0 1-23.444.823c-7.967 0-15.716-.248-23.178-.732a310.202 310.202 0 0 1-12.513-19.846h.001a307.41 307.41 0 0 1-10.923-20.627a310.278 310.278 0 0 1 10.89-20.637l-.001.001a307.318 307.318 0 0 1 12.413-19.761c7.613-.576 15.42-.876 23.31-.876H128c7.926 0 15.743.303 23.354.883a329.357 329.357 0 0 1 12.335 19.695a358.489 358.489 0 0 1 11.036 20.54a329.472 329.472 0 0 1-11 20.722Zm22.56-122.124c8.572 4.944 11.906 24.881 6.52 51.026c-.344 1.668-.73 3.367-1.15 5.09c-10.622-2.452-22.155-4.275-34.23-5.408c-7.034-10.017-14.323-19.124-21.64-27.008a160.789 160.789 0 0 1 5.888-5.4c18.9-16.447 36.564-22.941 44.612-18.3ZM128 90.808c12.625 0 22.86 10.235 22.86 22.86s-10.235 22.86-22.86 22.86s-22.86-10.235-22.86-22.86s10.235-22.86 22.86-22.86Z"></path></svg>
+
+===== FILE: src\assets\vite.svg =====
+<svg xmlns="http://www.w3.org/2000/svg" width="77" height="47" fill="none" aria-labelledby="vite-logo-title" viewBox="0 0 77 47"><title id="vite-logo-title">Vite</title><style>.parenthesis{fill:#000}@media (prefers-color-scheme:dark){.parenthesis{fill:#fff}}</style><path fill="#9135ff" d="M40.151 45.71c-.663.844-2.02.374-2.02-.699V34.708a2.26 2.26 0 0 0-2.262-2.262H24.493c-.92 0-1.457-1.04-.92-1.788l7.479-10.471c1.07-1.498 0-3.578-1.842-3.578H15.443c-.92 0-1.456-1.04-.92-1.788l9.696-13.576c.213-.297.556-.474.92-.474h28.894c.92 0 1.456 1.04.92 1.788l-7.48 10.472c-1.07 1.497 0 3.578 1.842 3.578h11.376c.944 0 1.474 1.087.89 1.83L40.153 45.712z"/><mask id="a" width="48" height="47" x="14" y="0" maskUnits="userSpaceOnUse" style="mask-type:alpha"><path fill="#000" d="M40.047 45.71c-.663.843-2.02.374-2.02-.699V34.708a2.26 2.26 0 0 0-2.262-2.262H24.389c-.92 0-1.457-1.04-.92-1.788l7.479-10.472c1.07-1.497 0-3.578-1.842-3.578H15.34c-.92 0-1.456-1.04-.92-1.788l9.696-13.575c.213-.297.556-.474.92-.474H53.93c.92 0 1.456 1.04.92 1.788L47.37 13.03c-1.07 1.498 0 3.578 1.842 3.578h11.376c.944 0 1.474 1.088.89 1.831L40.049 45.712z"/></mask><g mask="url(#a)"><g filter="url(#b)"><ellipse cx="5.508" cy="14.704" fill="#eee6ff" rx="5.508" ry="14.704" transform="rotate(269.814 20.96 11.29)scale(-1 1)"/></g><g filter="url(#c)"><ellipse cx="10.399" cy="29.851" fill="#eee6ff" rx="10.399" ry="29.851" transform="rotate(89.814 -16.902 -8.275)scale(1 -1)"/></g><g filter="url(#d)"><ellipse cx="5.508" cy="30.487" fill="#8900ff" rx="5.508" ry="30.487" transform="rotate(89.814 -19.197 -7.127)scale(1 -1)"/></g><g filter="url(#e)"><ellipse cx="5.508" cy="30.599" fill="#8900ff" rx="5.508" ry="30.599" transform="rotate(89.814 -25.928 4.177)scale(1 -1)"/></g><g filter="url(#f)"><ellipse cx="5.508" cy="30.599" fill="#8900ff" rx="5.508" ry="30.599" transform="rotate(89.814 -25.738 5.52)scale(1 -1)"/></g><g filter="url(#g)"><ellipse cx="14.072" cy="22.078" fill="#eee6ff" rx="14.072" ry="22.078" transform="rotate(93.35 31.245 55.578)scale(-1 1)"/></g><g filter="url(#h)"><ellipse cx="3.47" cy="21.501" fill="#8900ff" rx="3.47" ry="21.501" transform="rotate(89.009 35.419 55.202)scale(-1 1)"/></g><g filter="url(#i)"><ellipse cx="3.47" cy="21.501" fill="#8900ff" rx="3.47" ry="21.501" transform="rotate(89.009 35.419 55.202)scale(-1 1)"/></g><g filter="url(#j)"><ellipse cx="14.592" cy="9.743" fill="#8900ff" rx="4.407" ry="29.108" transform="rotate(39.51 14.592 9.743)"/></g><g filter="url(#k)"><ellipse cx="61.728" cy="-5.321" fill="#8900ff" rx="4.407" ry="29.108" transform="rotate(37.892 61.728 -5.32)"/></g><g filter="url(#l)"><ellipse cx="55.618" cy="7.104" fill="#00c2ff" rx="5.971" ry="9.665" transform="rotate(37.892 55.618 7.104)"/></g><g filter="url(#m)"><ellipse cx="12.326" cy="39.103" fill="#8900ff" rx="4.407" ry="29.108" transform="rotate(37.892 12.326 39.103)"/></g><g filter="url(#n)"><ellipse cx="12.326" cy="39.103" fill="#8900ff" rx="4.407" ry="29.108" transform="rotate(37.892 12.326 39.103)"/></g><g filter="url(#o)"><ellipse cx="49.857" cy="30.678" fill="#8900ff" rx="4.407" ry="29.108" transform="rotate(37.892 49.857 30.678)"/></g><g filter="url(#p)"><ellipse cx="52.623" cy="33.171" fill="#00c2ff" rx="5.971" ry="15.297" transform="rotate(37.892 52.623 33.17)"/></g></g><path d="M6.919 0c-9.198 13.166-9.252 33.575 0 46.789h6.215c-9.25-13.214-9.196-33.623 0-46.789zm62.424 0h-6.215c9.198 13.166 9.252 33.575 0 46.789h6.215c9.25-13.214 9.196-33.623 0-46.789" class="parenthesis"/><defs><filter id="b" width="60.045" height="41.654" x="-5.564" y="16.92" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="7.659"/></filter><filter id="c" width="90.34" height="51.437" x="-40.407" y="-6.762" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="7.659"/></filter><filter id="d" width="79.355" height="29.4" x="-35.435" y="2.801" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="e" width="79.579" height="29.4" x="-30.84" y="20.8" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="f" width="79.579" height="29.4" x="-29.307" y="21.949" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="g" width="74.749" height="58.852" x="29.961" y="-17.13" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="7.659"/></filter><filter id="h" width="61.377" height="25.362" x="37.754" y="3.055" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="i" width="61.377" height="25.362" x="37.754" y="3.055" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="j" width="56.045" height="63.649" x="-13.43" y="-22.082" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="k" width="54.814" height="64.646" x="34.321" y="-37.644" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="l" width="33.541" height="35.313" x="38.847" y="-10.552" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="m" width="54.814" height="64.646" x="-15.081" y="6.78" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="n" width="54.814" height="64.646" x="-15.081" y="6.78" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="o" width="54.814" height="64.646" x="22.45" y="-1.645" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="p" width="39.409" height="43.623" x="32.919" y="11.36" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter></defs></svg>
+
+
+===== FILE: src\components\CategoryDonutChart.jsx =====
+import { useMemo } from 'react';
+import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from 'recharts';
+import { cardHoverLift } from '@/lib/animationClasses';
+
+const CATEGORY_COLORS = {
+  Housing: 'var(--color-primary)',
+  Food: 'var(--color-secondary)',
+  Transport: 'var(--color-tertiary)',
+  Entertainment: '#94A3B8',
+  Utilities: '#c3c6d7',
+  Other: 'var(--color-outline)',
+};
+
+function getColor(category) {
+  return CATEGORY_COLORS[category] ?? CATEGORY_COLORS.Other;
+}
+
+function aggregateByCategory(transactions) {
+  const totals = new Map();
+  let grandTotal = 0;
+
+  for (const t of transactions) {
+    if (t.amount >= 0) continue; // expenses only
+    const amount = Math.abs(t.amount);
+    totals.set(t.category, (totals.get(t.category) ?? 0) + amount);
+    grandTotal += amount;
+  }
+
+  const entries = Array.from(totals.entries())
+    .map(([category, amount]) => ({
+      category,
+      amount,
+      percent: grandTotal > 0 ? Math.round((amount / grandTotal) * 100) : 0,
+    }))
+    .sort((a, b) => b.amount - a.amount);
+
+  return { entries, grandTotal };
+}
+
+function CategoryDonutChart({ transactions }) {
+  const { entries, grandTotal } = useMemo(
+    () => aggregateByCategory(transactions ?? []),
+    [transactions]
+  );
+
+  return (
+    <div
+      className={`flex flex-col gap-lg rounded-xl border border-outline-variant bg-surface-container-lowest p-lg lg:col-span-4 ${cardHoverLift}`}
+    >
+      <h2 className="font-h3 text-h3 text-on-surface">Spending by Category</h2>
+      <div className="flex h-full flex-col items-center gap-xl md:flex-row">
+        <div className="relative h-40 w-40 flex-shrink-0">
+          <ResponsiveContainer width="100%" height="100%">
+            <PieChart>
+              <Pie
+                data={entries}
+                dataKey="amount"
+                nameKey="category"
+                innerRadius="70%"
+                outerRadius="100%"
+                paddingAngle={2}
+                startAngle={90}
+                endAngle={-270}
+              >
+                {entries.map((entry) => (
+                  <Cell key={entry.category} fill={getColor(entry.category)} />
+                ))}
+              </Pie>
+              <Tooltip formatter={(value, name) => [`$${value.toLocaleString()}`, name]} />
+            </PieChart>
+          </ResponsiveContainer>
+          <div className="pointer-events-none absolute inset-0 flex flex-col items-center justify-center">
+            <span className="font-label text-label text-on-surface-variant">Total</span>
+            <span className="font-h3 text-h3 text-on-surface">${grandTotal.toLocaleString()}</span>
+          </div>
+        </div>
+        <div className="flex w-full flex-col gap-sm">
+          {entries.map((entry) => (
+            <div key={entry.category} className="flex items-center justify-between">
+              <div className="flex items-center gap-sm">
+                <span
+                  className="h-2 w-2 rounded-full"
+                  style={{ backgroundColor: getColor(entry.category) }}
+                />
+                <span className="font-body text-body text-on-surface">{entry.category}</span>
+              </div>
+              <span className="font-label text-label text-on-surface">{entry.percent}%</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default CategoryDonutChart;
+
+
+===== FILE: src\components\EmptyState.jsx =====
+import { SearchX } from 'lucide-react';
+
+export default function EmptyState({
+  icon: Icon = SearchX,
+  message = 'No results found',
+  actionLabel,
+  onAction,
+}) {
+  return (
+    <div className="flex flex-col items-center justify-center gap-md py-2xl px-lg text-center">
+      <div className="w-12 h-12 rounded-full bg-surface-container-low dark:bg-surface-container flex items-center justify-center text-on-surface-variant">
+        <Icon size={24} />
+      </div>
+      <p className="font-body text-body text-on-surface-variant">{message}</p>
+      {actionLabel && onAction && (
+        <button
+          onClick={onAction}
+          className="min-h-[44px] px-lg rounded-lg border border-outline-variant text-primary font-label text-label hover:bg-surface-container-low dark:hover:bg-surface-container transition-colors"
+        >
+          {actionLabel}
+        </button>
+      )}
+    </div>
+  );
+}
+
+
+===== FILE: src\components\ErrorBoundary.jsx =====
+import { Component } from 'react';
+import { AlertTriangle } from 'lucide-react';
+
+export default class ErrorBoundary extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { hasError: false };
+  }
+
+  static getDerivedStateFromError() {
+    return { hasError: true };
+  }
+
+  componentDidCatch(error, info) {
+    // Logged for local debugging; no external error-reporting service wired up (no backend in this project)
+    console.error('Dashboard error boundary caught:', error, info);
+  }
+
+  handleReset = () => {
+    this.setState({ hasError: false });
+  };
+
+  render() {
+    if (this.state.hasError) {
+      return (
+        <div className="flex flex-col items-center justify-center gap-md py-2xl px-lg text-center min-h-[400px]">
+          <div className="w-12 h-12 rounded-full bg-error-container/30 flex items-center justify-center text-error">
+            <AlertTriangle size={24} />
+          </div>
+          <h2 className="font-h3 text-h3 text-on-surface dark:text-on-surface-variant">
+            Something went wrong
+          </h2>
+          <p className="font-body text-body text-on-surface-variant max-w-md">
+            This part of the dashboard hit an unexpected error. Try reloading — your data is all
+            local mock data, so nothing was lost.
+          </p>
+          <button
+            onClick={this.handleReset}
+            className="min-h-[44px] px-lg rounded-lg bg-primary text-on-primary font-label text-label hover:opacity-90 transition-opacity"
+          >
+            Try Again
+          </button>
+        </div>
+      );
+    }
+
+    return this.props.children;
+  }
+}
+
+
+===== FILE: src\components\Footer.jsx =====
+function Footer() {
+  return (
+    <footer className="w-full border-t border-outline-variant bg-surface py-lg dark:border-outline dark:bg-surface-container-lowest">
+      <div className="flex flex-col items-center gap-xs px-margin-mobile text-center md:px-margin-desktop">
+        <span className="font-label text-label font-bold text-on-surface dark:text-on-surface-variant">
+          FinSight
+        </span>
+        <span className="font-small text-small text-on-surface-variant dark:text-outline">
+          FinSight — Demo Dashboard
+        </span>
+      </div>
+    </footer>
+  );
+}
+
+export default Footer;
+
+
+===== FILE: src\components\GoalCard.jsx =====
+import { Shield, Plane, Laptop, PiggyBank } from 'lucide-react';
+
+const ICONS = {
+  'Emergency Fund': Shield,
+  'Vacation to Japan': Plane,
+  Vacation: Plane,
+  'New Laptop': Laptop,
+};
+
+function formatCurrency(amount) {
+  return new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD',
+    maximumFractionDigits: 0,
+  }).format(amount);
+}
+
+function estimateCompletion(currentAmount, targetAmount, targetDate) {
+  if (currentAmount >= targetAmount) return null;
+  const date = new Date(targetDate);
+  return date.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+}
+
+export default function GoalCard({ goal }) {
+  const { name, targetAmount, currentAmount, targetDate } = goal;
+  const Icon = ICONS[name] || PiggyBank;
+  const percent = Math.min(100, Math.round((currentAmount / targetAmount) * 100));
+  const isComplete = currentAmount >= targetAmount;
+  const estCompletion = estimateCompletion(currentAmount, targetAmount, targetDate);
+
+  const barColor = isComplete ? 'bg-[#22C55E]' : 'bg-primary';
+  const textColor = isComplete ? 'text-[#166534] dark:text-[#4ADE80]' : 'text-primary';
+
+  return (
+    <div className="bg-surface-container-lowest dark:bg-surface-container-lowest p-lg rounded-xl custom-shadow border border-outline-variant dark:border-outline flex flex-col gap-lg transition-transform duration-200 ease-out hover:-translate-y-0.5 hover:shadow-md">
+      <div className="flex items-center justify-between gap-md">
+        <div className="flex items-center gap-md">
+          <div
+            className={`w-10 h-10 rounded-lg flex items-center justify-center ${
+              isComplete
+                ? 'bg-[#DCFCE7] dark:bg-[#166534]/30 text-[#166534] dark:text-[#4ADE80]'
+                : 'bg-surface-container-low dark:bg-surface-container text-primary'
+            }`}
+          >
+            <Icon size={20} strokeWidth={2} />
+          </div>
+          <div>
+            <h3 className="font-body text-body font-bold text-on-surface dark:text-on-surface-variant">
+              {name}
+            </h3>
+            <p className="font-small text-small text-on-surface-variant">
+              Target: {formatCurrency(targetAmount)}
+            </p>
+          </div>
+        </div>
+        {isComplete && (
+          <span className="inline-flex items-center rounded-full bg-[#DCFCE7] dark:bg-[#166534]/30 px-sm py-[2px] text-[11px] font-semibold text-[#166534] dark:text-[#4ADE80] whitespace-nowrap">
+            Goal Reached! 🎉
+          </span>
+        )}
+      </div>
+
+      <div className="space-y-sm">
+        <div className="flex items-center justify-between font-label text-label">
+          <span className={textColor}>{percent}% complete</span>
+          <span className="text-on-surface-variant">{formatCurrency(currentAmount)} saved</span>
+        </div>
+        <div className="h-2 w-full bg-surface-container-low dark:bg-surface-container rounded-full overflow-hidden">
+          <div
+            className={`h-full rounded-full transition-all duration-1000 ${barColor}`}
+            style={{ width: `${percent}%` }}
+          />
+        </div>
+        {isComplete ? (
+          <p className="font-small text-small text-on-surface-variant mt-xs">
+            Completed on{' '}
+            {new Date(targetDate).toLocaleDateString('en-US', {
+              month: 'short',
+              day: 'numeric',
+              year: 'numeric',
+            })}
+          </p>
+        ) : (
+          <p className="font-small text-small text-on-surface-variant mt-xs italic">
+            Est. completion: {estCompletion}
+          </p>
+        )}
+      </div>
+    </div>
+  );
+}
+
+
+===== FILE: src\components\Header.jsx =====
+import { Wallet, ChevronDown, Sun, Moon } from 'lucide-react';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
+import { useDateRange, DATE_RANGE_OPTIONS } from '@/context/DateRangeContext';
+import { useTheme } from '@/context/ThemeContext';
+
+function Header() {
+  const { dateRange, setDateRange } = useDateRange();
+  const { theme, toggleTheme } = useTheme();
+
+  return (
+    <header className="sticky top-0 z-50 flex h-[72px] w-full items-center justify-between border-b border-outline-variant bg-surface px-margin-desktop dark:border-outline dark:bg-surface-container-lowest">
+      <div className="flex items-center gap-md">
+        <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary-container text-on-primary">
+          <Wallet size={20} strokeWidth={2.25} />
+        </div>
+        <h1 className="font-h3 text-h3 font-semibold tracking-tight text-on-surface dark:text-on-surface-variant">
+          FinSight
+        </h1>
+      </div>
+
+      <div className="flex items-center gap-lg">
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <button className="flex items-center gap-sm rounded-full bg-surface-container-low px-md py-sm font-label text-label text-on-surface-variant transition-colors hover:bg-surface-container-high">
+              <span>{dateRange}</span>
+              <ChevronDown size={18} />
+            </button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent align="end">
+            {DATE_RANGE_OPTIONS.map((option) => (
+              <DropdownMenuItem
+                key={option}
+                onSelect={() => setDateRange(option)}
+                className={option === dateRange ? 'font-semibold text-primary' : ''}
+              >
+                {option}
+              </DropdownMenuItem>
+            ))}
+          </DropdownMenuContent>
+        </DropdownMenu>
+
+        <button
+          onClick={toggleTheme}
+          aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+          className="flex h-10 w-10 items-center justify-center rounded-full text-on-surface-variant transition-colors hover:bg-surface-container-low"
+        >
+          {theme === 'dark' ? <Moon size={20} /> : <Sun size={20} />}
+        </button>
+      </div>
+    </header>
+  );
+}
+
+export default Header;
+
+
+===== FILE: src\components\Layout.jsx =====
+import { Outlet } from 'react-router-dom';
+import Header from './Header.jsx';
+import Footer from './Footer.jsx';
+
+function Layout() {
+  return (
+    <div className="flex min-h-screen flex-col bg-background text-on-surface">
+      <Header />
+      <main className="flex-grow">
+        <Outlet />
+      </main>
+      <Footer />
+    </div>
+  );
+}
+
+export default Layout;
+
+
+===== FILE: src\components\MobileTabBar.jsx =====
+import { useEffect, useState } from 'react';
+import { LayoutDashboard, TrendingUp, Receipt, Target } from 'lucide-react';
+
+const TABS = [
+  { id: 'overview', label: 'Overview', icon: LayoutDashboard },
+  { id: 'trends', label: 'Trends', icon: TrendingUp },
+  { id: 'transactions', label: 'Transactions', icon: Receipt },
+  { id: 'goals', label: 'Goals', icon: Target },
+];
+
+function MobileTabBar() {
+  const [activeTab, setActiveTab] = useState(TABS[0].id);
+
+  useEffect(() => {
+    const sections = TABS.map(({ id }) => document.getElementById(id)).filter(Boolean);
+
+    if (sections.length === 0) return undefined;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+
+        if (visible.length > 0) {
+          setActiveTab(visible[0].target.id);
+        }
+      },
+      {
+        root: null,
+        rootMargin: '-45% 0px -45% 0px',
+        threshold: [0, 0.25, 0.5, 0.75, 1],
+      }
+    );
+
+    sections.forEach((section) => observer.observe(section));
+
+    return () => observer.disconnect();
+  }, []);
+
+  const handleTabClick = (id) => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      setActiveTab(id);
+    }
+  };
+
+  return (
+    <nav
+      className="fixed bottom-0 left-0 z-50 flex w-full items-center justify-around border-t border-outline-variant bg-surface-container-lowest md:hidden dark:border-outline dark:bg-surface-container-lowest"
+      aria-label="Section navigation"
+    >
+      {TABS.map(({ id, label, icon: Icon }) => {
+        const isActive = activeTab === id;
+        return (
+          <button
+            key={id}
+            type="button"
+            onClick={() => handleTabClick(id)}
+            aria-current={isActive ? 'true' : undefined}
+            className={`flex min-h-[44px] min-w-[44px] flex-1 flex-col items-center justify-center gap-xs py-sm transition-colors ${
+              isActive
+                ? 'text-primary'
+                : 'text-on-surface-variant hover:text-primary dark:text-outline'
+            }`}
+          >
+            <Icon size={20} strokeWidth={isActive ? 2.5 : 2} />
+            <span
+              className={`font-small text-[11px] leading-none ${isActive ? 'font-semibold' : ''}`}
+            >
+              {label}
+            </span>
+          </button>
+        );
+      })}
+    </nav>
+  );
+}
+
+export default MobileTabBar;
+
+
+===== FILE: src\components\Skeleton.jsx =====
+export default function Skeleton({ className = '' }) {
+  return (
+    <div
+      className={`animate-pulse bg-surface-container-high dark:bg-surface-container rounded-lg ${className}`}
+      aria-hidden="true"
+    />
+  );
+}
+
+
+===== FILE: src\components\SummaryCard.jsx =====
+import { TrendingUp, TrendingDown } from 'lucide-react';
+import { cardHoverLift } from '@/lib/animationClasses';
+
+/**
+ * @param {string} label - e.g. "Total Balance"
+ * @param {number} value - raw numeric value (formatted as currency here)
+ * @param {number} [trendPercent] - signed percent change, e.g. 4.2 or -8.1
+ * @param {boolean} [showTrend] - whether to render the trend badge at all
+ */
+function SummaryCard({ label, value, trendPercent, showTrend = true }) {
+  const formattedValue = value.toLocaleString('en-US', {
+    style: 'currency',
+    currency: 'USD',
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  });
+
+  const isPositive = (trendPercent ?? 0) >= 0;
+  const TrendIcon = isPositive ? TrendingUp : TrendingDown;
+
+  return (
+    <div
+      className={`flex flex-col gap-sm rounded-xl border border-outline-variant bg-surface-container-lowest p-lg ${cardHoverLift}`}
+    >
+      <span className="font-label text-label text-on-surface-variant">{label}</span>
+      <div className="flex items-end justify-between gap-sm">
+        <span className="font-h1 text-h1 text-on-surface tracking-tighter">{formattedValue}</span>
+        {showTrend && trendPercent !== undefined && (
+          <span
+            className={`flex items-center gap-xs rounded-full px-sm py-[2px] font-label text-[12px] ${
+              isPositive
+                ? 'bg-secondary-container/20 text-secondary'
+                : 'bg-error-container/30 text-error'
+            }`}
+          >
+            <TrendIcon size={14} />
+            {isPositive ? '+' : ''}
+            {trendPercent}%
+          </span>
+        )}
+      </div>
+    </div>
+  );
+}
+
+export default SummaryCard;
+
+
+===== FILE: src\components\TestList.jsx =====
+import { useState } from 'react';
+import { useAutoAnimate } from '@/hooks/useAutoAnimate';
+import { cardHoverLift } from '@/lib/animationClasses';
+
+const STARTER_ITEMS = ['Coffee', 'Groceries', 'Rent', 'Gym'];
+
+// TEMPORARY test component for verifying Auto Animate — delete after 6.3.1 passes.
+function TestList() {
+  const [items, setItems] = useState(STARTER_ITEMS);
+  const [listRef] = useAutoAnimate();
+
+  const addItem = () => {
+    setItems((prev) => [...prev, `Item ${prev.length + 1}`]);
+  };
+
+  const removeItem = (index) => {
+    setItems((prev) => prev.filter((_, i) => i !== index));
+  };
+
+  const shuffleItems = () => {
+    setItems((prev) => [...prev].sort(() => Math.random() - 0.5));
+  };
+
+  return (
+    <div className="p-lg max-w-md mx-auto space-y-md">
+      <h2 className="font-h3 text-h3 text-on-surface">Auto Animate Test</h2>
+      <div className="flex gap-sm">
+        <button
+          onClick={addItem}
+          className="px-md py-sm rounded-lg bg-primary text-on-primary font-label text-label"
+        >
+          Add
+        </button>
+        <button
+          onClick={shuffleItems}
+          className="px-md py-sm rounded-lg border border-outline-variant font-label text-label"
+        >
+          Shuffle
+        </button>
+      </div>
+      <ul ref={listRef} className="space-y-sm">
+        {items.map((item, index) => (
+          <li
+            key={item}
+            className={`bg-surface-container-lowest border border-outline-variant rounded-xl p-md flex justify-between items-center ${cardHoverLift}`}
+          >
+            <span className="font-body text-body text-on-surface">{item}</span>
+            <button
+              onClick={() => removeItem(index)}
+              className="text-error font-label text-label hover:underline"
+            >
+              Remove
+            </button>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+export default TestList;
+
+
+===== FILE: src\components\TransactionCard.jsx =====
+import { Home, ShoppingBasket, Car, Film, Zap, Wallet, CircleDollarSign } from 'lucide-react';
+
+const CATEGORY_ICONS = {
+  Housing: Home,
+  Food: ShoppingBasket,
+  Transport: Car,
+  Entertainment: Film,
+  Utilities: Zap,
+  Income: CircleDollarSign,
+  Other: Wallet,
+};
+
+const CATEGORY_STYLES = {
+  Housing: 'bg-primary-container/10 text-primary',
+  Food: 'bg-secondary-container/10 text-on-secondary-container',
+  Transport: 'bg-tertiary-container/10 text-tertiary',
+  Entertainment: 'bg-tertiary-container/10 text-tertiary',
+  Utilities: 'bg-outline-variant/30 text-on-surface-variant',
+  Income: 'bg-secondary-container/10 text-on-secondary-container',
+  Other: 'bg-outline-variant/30 text-on-surface-variant',
+};
+
+function formatDate(dateStr) {
+  return new Date(dateStr).toLocaleDateString('en-US', {
+    month: 'short',
+    day: 'numeric',
+    year: 'numeric',
+  });
+}
+
+function formatCurrency(amount) {
+  return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(
+    Math.abs(amount)
+  );
+}
+
+export default function TransactionCard({ transaction }) {
+  const { merchant, category, date, amount, type } = transaction;
+  const Icon = CATEGORY_ICONS[category] || Wallet;
+  const pillClass = CATEGORY_STYLES[category] || CATEGORY_STYLES.Other;
+  const isIncome = type === 'income' || amount > 0;
+
+  return (
+    <div className="flex items-center gap-md p-md border-b border-outline-variant last:border-b-0">
+      <div className="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-primary-container flex-shrink-0">
+        <Icon size={20} strokeWidth={2} />
+      </div>
+      <div className="flex-1 min-w-0">
+        <div className="flex items-center justify-between gap-sm">
+          <span className="font-body text-body font-semibold text-on-surface truncate">
+            {merchant}
+          </span>
+          <span
+            className={`font-body text-body font-bold whitespace-nowrap ${isIncome ? 'text-secondary' : 'text-error'}`}
+          >
+            {isIncome ? '+' : '-'}
+            {formatCurrency(amount)}
+          </span>
+        </div>
+        <div className="flex items-center justify-between gap-sm mt-xs">
+          <span
+            className={`font-label text-[11px] px-sm py-[1px] rounded-full uppercase tracking-wider ${pillClass}`}
+          >
+            {category}
+          </span>
+          <span className="font-small text-small text-on-surface-variant whitespace-nowrap">
+            {formatDate(date)}
+          </span>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+
+===== FILE: src\components\TransactionRow.jsx =====
+import { Home, ShoppingBasket, Car, Film, Zap, Wallet, CircleDollarSign } from 'lucide-react';
+
+const CATEGORY_ICONS = {
+  Housing: Home,
+  Food: ShoppingBasket,
+  Transport: Car,
+  Entertainment: Film,
+  Utilities: Zap,
+  Income: CircleDollarSign,
+  Other: Wallet,
+};
+
+const CATEGORY_STYLES = {
+  Housing: 'bg-primary-container/10 text-primary',
+  Food: 'bg-secondary-container/10 text-on-secondary-container',
+  Transport: 'bg-tertiary-container/10 text-tertiary',
+  Entertainment: 'bg-tertiary-container/10 text-tertiary',
+  Utilities: 'bg-outline-variant/30 text-on-surface-variant',
+  Income: 'bg-secondary-container/10 text-on-secondary-container',
+  Other: 'bg-outline-variant/30 text-on-surface-variant',
+};
+
+function formatDate(dateStr) {
+  return new Date(dateStr).toLocaleDateString('en-US', {
+    month: 'short',
+    day: 'numeric',
+    year: 'numeric',
+  });
+}
+
+function formatCurrency(amount) {
+  return new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD',
+  }).format(Math.abs(amount));
+}
+
+export default function TransactionRow({ transaction }) {
+  const { merchant, category, date, amount, type } = transaction;
+  const Icon = CATEGORY_ICONS[category] || Wallet;
+  const pillClass = CATEGORY_STYLES[category] || CATEGORY_STYLES.Other;
+  const isIncome = type === 'income' || amount > 0;
+
+  return (
+    <tr className="hover:bg-surface-container-low transition-colors cursor-pointer group">
+      <td className="px-lg py-md">
+        <div className="flex items-center gap-md min-w-0">
+          <div className="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-primary-container flex-shrink-0">
+            <Icon size={20} strokeWidth={2} />
+          </div>
+          <span className="font-body text-body font-semibold text-on-surface truncate">
+            {merchant}
+          </span>
+        </div>
+      </td>
+      <td className="px-lg py-md">
+        <span
+          className={`font-label text-[12px] px-sm py-[2px] rounded-full uppercase tracking-wider whitespace-nowrap ${pillClass}`}
+        >
+          {category}
+        </span>
+      </td>
+      <td className="px-lg py-md font-body text-body text-on-surface-variant whitespace-nowrap">
+        {formatDate(date)}
+      </td>
+      <td
+        className={`px-lg py-md text-right font-body text-body font-bold whitespace-nowrap ${
+          isIncome ? 'text-secondary' : 'text-error'
+        }`}
+      >
+        {isIncome ? '+' : '-'}
+        {formatCurrency(amount)}
+      </td>
+    </tr>
+  );
+}
+
+
+===== FILE: src\components\TransactionsTable.jsx =====
+import { useState, useEffect, useMemo } from 'react';
+import {
+  Search,
+  ChevronDown,
+  ChevronLeft,
+  ChevronRight,
+  ArrowUp,
+  ArrowDown,
+  ChevronsUpDown,
+} from 'lucide-react';
+import TransactionRow from '@/components/TransactionRow';
+import TransactionCard from '@/components/TransactionCard';
+import EmptyState from '@/components/EmptyState';
+import { useDateRange } from '@/context/DateRangeContext';
+import { useFilteredTransactions } from '@/hooks/useFilteredTransactions';
+import { useAutoAnimate } from '@/hooks/useAutoAnimate';
+
+const DEBOUNCE_MS = 300;
+const PAGE_SIZE = 10;
+const CATEGORIES = [
+  'All Categories',
+  'Housing',
+  'Food',
+  'Transport',
+  'Entertainment',
+  'Utilities',
+  'Income',
+  'Other',
+];
+
+function SortIcon({ active, dir }) {
+  if (!active)
+    return <ChevronsUpDown size={16} className="text-outline group-hover:text-primary" />;
+  return dir === 'asc' ? (
+    <ArrowUp size={16} className="text-primary" />
+  ) : (
+    <ArrowDown size={16} className="text-primary" />
+  );
+}
+
+export default function TransactionsTable({ transactions }) {
+  const { dateRange } = useDateRange();
+  const [searchInput, setSearchInput] = useState('');
+  const [debouncedSearch, setDebouncedSearch] = useState('');
+  const [category, setCategory] = useState('All Categories');
+  const [sortBy, setSortBy] = useState('date');
+  const [sortDir, setSortDir] = useState('desc');
+  const [page, setPage] = useState(1);
+
+  // Auto Animate refs — animate row/card changes on filter, sort, and page changes
+  // instead of snapping (7D.1.1)
+  const [tableBodyRef] = useAutoAnimate();
+  const [mobileListRef] = useAutoAnimate();
+
+  useEffect(() => {
+    const handle = setTimeout(() => setDebouncedSearch(searchInput), DEBOUNCE_MS);
+    return () => clearTimeout(handle);
+  }, [searchInput]);
+
+  // Reset to page 1 whenever a filter/sort input changes.
+  // Done during render (not in an effect) per React's "adjusting state when
+  // props change" pattern — avoids the cascading-render warning that comes
+  // from calling setState synchronously inside a useEffect body.
+  const filterSignature = `${debouncedSearch}|${category}|${sortBy}|${sortDir}|${dateRange}`;
+  const [prevFilterSignature, setPrevFilterSignature] = useState(filterSignature);
+  if (filterSignature !== prevFilterSignature) {
+    setPrevFilterSignature(filterSignature);
+    setPage(1);
+  }
+
+  const filtered = useFilteredTransactions(transactions, {
+    dateRange,
+    search: debouncedSearch,
+    category,
+    sortBy,
+    sortDir,
+  });
+
+  const totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
+  const currentPage = Math.min(page, totalPages);
+
+  const paginated = useMemo(() => {
+    const start = (currentPage - 1) * PAGE_SIZE;
+    return filtered.slice(start, start + PAGE_SIZE);
+  }, [filtered, currentPage]);
+
+  function toggleSort(column) {
+    if (sortBy === column) {
+      setSortDir((d) => (d === 'asc' ? 'desc' : 'asc'));
+    } else {
+      setSortBy(column);
+      setSortDir('desc');
+    }
+  }
+
+  function handleClearFilters() {
+    setSearchInput('');
+    setDebouncedSearch('');
+    setCategory('All Categories');
+    setSortBy('date');
+    setSortDir('desc');
+  }
+
+  const rangeStart = filtered.length === 0 ? 0 : (currentPage - 1) * PAGE_SIZE + 1;
+  const rangeEnd = Math.min(currentPage * PAGE_SIZE, filtered.length);
+  const pageNumbers = Array.from({ length: totalPages }, (_, i) => i + 1);
+  const hasResults = filtered.length > 0;
+
+  return (
+    <div className="bg-surface-container-lowest dark:bg-surface-container-lowest">
+      {/* Filter bar */}
+      <div className="p-lg flex flex-col md:flex-row md:items-center justify-between gap-md border-b border-outline-variant dark:border-outline">
+        <h2 className="font-h3 text-h3 text-on-surface dark:text-on-surface-variant">
+          Recent Transactions
+        </h2>
+        <div className="flex flex-col sm:flex-row gap-sm w-full md:w-auto">
+          <div className="relative w-full md:w-64">
+            <Search
+              size={20}
+              className="absolute left-sm top-1/2 -translate-y-1/2 text-outline pointer-events-none"
+            />
+            <input
+              className="w-full pl-xl pr-md py-sm min-h-[44px] border border-outline-variant dark:border-outline rounded-lg font-body text-body bg-surface dark:bg-surface-container-low text-on-surface dark:text-on-surface-variant focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all"
+              placeholder="Search merchant..."
+              type="text"
+              value={searchInput}
+              onChange={(e) => setSearchInput(e.target.value)}
+            />
+          </div>
+          <div className="relative w-full sm:w-auto">
+            <select
+              className="w-full sm:w-auto appearance-none pl-md pr-xl py-sm min-h-[44px] border border-outline-variant dark:border-outline rounded-lg font-label text-label text-on-surface-variant bg-surface dark:bg-surface-container-low focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all"
+              value={category}
+              onChange={(e) => setCategory(e.target.value)}
+            >
+              {CATEGORIES.map((c) => (
+                <option key={c} value={c}>
+                  {c}
+                </option>
+              ))}
+            </select>
+            <ChevronDown
+              size={16}
+              className="absolute right-md top-1/2 -translate-y-1/2 text-outline pointer-events-none"
+            />
+          </div>
+        </div>
+      </div>
+
+      {hasResults ? (
+        <>
+          {/* Desktop table (>= md) */}
+          <div className="hidden md:block overflow-x-auto">
+            <table className="w-full">
+              <thead className="bg-surface-container-low dark:bg-surface-container">
+                <tr>
+                  <th className="px-lg py-md text-left font-label text-label text-on-surface-variant uppercase tracking-wider">
+                    Merchant
+                  </th>
+                  <th className="px-lg py-md text-left font-label text-label text-on-surface-variant uppercase tracking-wider">
+                    Category
+                  </th>
+                  <th
+                    className="px-lg py-md text-left font-label text-label text-on-surface-variant uppercase tracking-wider cursor-pointer select-none group"
+                    onClick={() => toggleSort('date')}
+                  >
+                    <div className="flex items-center gap-xs">
+                      Date
+                      <SortIcon active={sortBy === 'date'} dir={sortDir} />
+                    </div>
+                  </th>
+                  <th
+                    className="px-lg py-md text-right font-label text-label text-on-surface-variant uppercase tracking-wider cursor-pointer select-none group"
+                    onClick={() => toggleSort('amount')}
+                  >
+                    <div className="flex items-center justify-end gap-xs">
+                      Amount
+                      <SortIcon active={sortBy === 'amount'} dir={sortDir} />
+                    </div>
+                  </th>
+                </tr>
+              </thead>
+              <tbody
+                ref={tableBodyRef}
+                className="divide-y divide-outline-variant dark:divide-outline"
+              >
+                {paginated.map((t) => (
+                  <TransactionRow key={t.id} transaction={t} />
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          {/* Mobile card list (< md) */}
+          <div ref={mobileListRef} className="md:hidden">
+            {paginated.map((t) => (
+              <TransactionCard key={t.id} transaction={t} />
+            ))}
+          </div>
+        </>
+      ) : (
+        <EmptyState
+          message="No transactions match your filters"
+          actionLabel="Clear Filters"
+          onAction={handleClearFilters}
+        />
+      )}
+
+      {/* Pagination */}
+      <div className="p-lg border-t border-outline-variant dark:border-outline flex flex-col sm:flex-row items-center justify-between gap-md">
+        <span className="font-label text-label text-on-surface-variant">
+          {hasResults
+            ? `Showing ${rangeStart}-${rangeEnd} of ${filtered.length} transactions`
+            : 'Showing 0 of 0 transactions'}
+        </span>
+        {hasResults && (
+          <div className="flex items-center gap-xs">
+            <button
+              className="w-11 h-11 flex items-center justify-center rounded border border-outline-variant dark:border-outline text-on-surface-variant hover:bg-surface-container-low dark:hover:bg-surface-container transition-colors disabled:opacity-30"
+              onClick={() => setPage((p) => Math.max(1, p - 1))}
+              disabled={currentPage === 1}
+              aria-label="Previous page"
+            >
+              <ChevronLeft size={18} />
+            </button>
+            {pageNumbers.map((n) => (
+              <button
+                key={n}
+                onClick={() => setPage(n)}
+                className={`w-11 h-11 flex items-center justify-center rounded font-label text-label transition-colors ${
+                  n === currentPage
+                    ? 'bg-primary text-on-primary'
+                    : 'border border-outline-variant dark:border-outline text-on-surface-variant hover:bg-surface-container-low dark:hover:bg-surface-container'
+                }`}
+              >
+                {n}
+              </button>
+            ))}
+            <button
+              className="w-11 h-11 flex items-center justify-center rounded border border-outline-variant dark:border-outline text-on-surface-variant hover:bg-surface-container-low dark:hover:bg-surface-container transition-colors disabled:opacity-30"
+              onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
+              disabled={currentPage === totalPages}
+              aria-label="Next page"
+            >
+              <ChevronRight size={18} />
+            </button>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
+
+===== FILE: src\components\TrendChart.jsx =====
+import { useMemo } from 'react';
+import {
+  LineChart,
+  Line,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  ResponsiveContainer,
+} from 'recharts';
+import { cardHoverLift } from '@/lib/animationClasses';
+
+const MONTH_LABELS = [
+  'Jan',
+  'Feb',
+  'Mar',
+  'Apr',
+  'May',
+  'Jun',
+  'Jul',
+  'Aug',
+  'Sep',
+  'Oct',
+  'Nov',
+  'Dec',
+];
+
+function aggregateByMonth(transactions) {
+  const buckets = new Map();
+
+  for (const t of transactions) {
+    const d = new Date(t.date);
+    const key = `${d.getFullYear()}-${String(d.getMonth()).padStart(2, '0')}`;
+    if (!buckets.has(key)) {
+      buckets.set(key, {
+        key,
+        month: MONTH_LABELS[d.getMonth()],
+        income: 0,
+        expenses: 0,
+        sortIndex: d.getFullYear() * 12 + d.getMonth(),
+      });
+    }
+    const bucket = buckets.get(key);
+    if (t.amount > 0) {
+      bucket.income += t.amount;
+    } else {
+      bucket.expenses += Math.abs(t.amount);
+    }
+  }
+
+  return Array.from(buckets.values())
+    .sort((a, b) => a.sortIndex - b.sortIndex)
+    .map(({ month, income, expenses }) => ({
+      month,
+      income: Math.round(income),
+      expenses: Math.round(expenses),
+    }));
+}
+
+function CustomTooltip({ active, payload, label }) {
+  if (!active || !payload?.length) return null;
+  return (
+    <div className="rounded-lg border border-outline-variant bg-surface-container-lowest p-sm shadow-md">
+      <p className="font-label text-label text-on-surface mb-xs">{label}</p>
+      {payload.map((entry) => (
+        <p key={entry.dataKey} className="font-small text-small" style={{ color: entry.color }}>
+          {entry.name}: ${entry.value.toLocaleString()}
+        </p>
+      ))}
+    </div>
+  );
+}
+
+function TrendChart({ transactions }) {
+  const data = useMemo(() => aggregateByMonth(transactions ?? []), [transactions]);
+  const hasSparseData = data.length < 3;
+
+  return (
+    <div
+      className={`flex flex-col gap-lg rounded-xl border border-outline-variant bg-surface-container-lowest p-lg lg:col-span-6 ${cardHoverLift}`}
+    >
+      <div className="flex items-center justify-between">
+        <h2 className="font-h3 text-h3 text-on-surface">Income vs Expenses</h2>
+        <div className="flex gap-md">
+          <div className="flex items-center gap-xs">
+            <span className="h-3 w-3 rounded-full bg-primary" />
+            <span className="font-label text-label text-on-surface-variant">Income</span>
+          </div>
+          <div className="flex items-center gap-xs">
+            <span className="h-3 w-3 rounded-full bg-tertiary" />
+            <span className="font-label text-label text-on-surface-variant">Expenses</span>
+          </div>
+        </div>
+      </div>
+      <div className="h-64 w-full">
+        <ResponsiveContainer width="100%" height="100%">
+          <LineChart data={data} margin={{ top: 8, right: 8, left: 0, bottom: 0 }}>
+            <CartesianGrid strokeDasharray="3 3" stroke="var(--color-outline-variant)" />
+            <XAxis
+              dataKey="month"
+              tick={{ fontSize: 12 }}
+              stroke="var(--color-on-surface-variant)"
+            />
+            <YAxis tick={{ fontSize: 12 }} stroke="var(--color-on-surface-variant)" />
+            <Tooltip content={<CustomTooltip />} />
+            <Line
+              type="monotone"
+              dataKey="income"
+              name="Income"
+              stroke="var(--color-primary)"
+              strokeWidth={2}
+              dot={{ r: 3 }}
+            />
+            <Line
+              type="monotone"
+              dataKey="expenses"
+              name="Expenses"
+              stroke="var(--color-tertiary)"
+              strokeWidth={2}
+              dot={{ r: 3 }}
+            />
+          </LineChart>
+        </ResponsiveContainer>
+      </div>
+      {hasSparseData && (
+        <p className="font-small text-small text-on-surface-variant">
+          Not enough data points in this range to show a detailed trend.
+        </p>
+      )}
+    </div>
+  );
+}
+
+export default TrendChart;
+
+
+===== FILE: src\components\ui\button.jsx =====
+import { Button as ButtonPrimitive } from "@base-ui/react/button"
+import { cva } from "class-variance-authority";
+
+import { cn } from "@/lib/utils"
+
+const buttonVariants = cva(
+  "group/button inline-flex shrink-0 items-center justify-center rounded-md border border-transparent bg-clip-padding text-sm font-medium whitespace-nowrap transition-all outline-none select-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 active:not-aria-[haspopup]:translate-y-px disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-3 aria-invalid:ring-destructive/20 dark:aria-invalid:border-destructive/50 dark:aria-invalid:ring-destructive/40 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+  {
+    variants: {
+      variant: {
+        default: "bg-primary text-primary-foreground hover:bg-primary/80",
+        outline:
+          "border-border bg-background shadow-xs hover:bg-muted hover:text-foreground aria-expanded:bg-muted aria-expanded:text-foreground dark:border-input dark:bg-input/30 dark:hover:bg-input/50",
+        secondary:
+          "bg-secondary text-secondary-foreground hover:bg-[color-mix(in_oklch,var(--secondary),var(--foreground)_5%)] aria-expanded:bg-secondary aria-expanded:text-secondary-foreground",
+        ghost:
+          "hover:bg-muted hover:text-foreground aria-expanded:bg-muted aria-expanded:text-foreground dark:hover:bg-muted/50",
+        destructive:
+          "bg-destructive/10 text-destructive hover:bg-destructive/20 focus-visible:border-destructive/40 focus-visible:ring-destructive/20 dark:bg-destructive/20 dark:hover:bg-destructive/30 dark:focus-visible:ring-destructive/40",
+        link: "text-primary underline-offset-4 hover:underline",
+      },
+      size: {
+        default:
+          "h-9 gap-1.5 px-2.5 in-data-[slot=button-group]:rounded-md has-data-[icon=inline-end]:pr-2 has-data-[icon=inline-start]:pl-2",
+        xs: "h-6 gap-1 rounded-[min(var(--radius-md),8px)] px-2 text-xs in-data-[slot=button-group]:rounded-md has-data-[icon=inline-end]:pr-1.5 has-data-[icon=inline-start]:pl-1.5 [&_svg:not([class*='size-'])]:size-3",
+        sm: "h-8 gap-1 rounded-[min(var(--radius-md),10px)] px-2.5 in-data-[slot=button-group]:rounded-md has-data-[icon=inline-end]:pr-1.5 has-data-[icon=inline-start]:pl-1.5",
+        lg: "h-10 gap-1.5 px-2.5 has-data-[icon=inline-end]:pr-2 has-data-[icon=inline-start]:pl-2",
+        icon: "size-9",
+        "icon-xs":
+          "size-6 rounded-[min(var(--radius-md),8px)] in-data-[slot=button-group]:rounded-md [&_svg:not([class*='size-'])]:size-3",
+        "icon-sm":
+          "size-8 rounded-[min(var(--radius-md),10px)] in-data-[slot=button-group]:rounded-md",
+        "icon-lg": "size-10",
+      },
+    },
+    defaultVariants: {
+      variant: "default",
+      size: "default",
+    },
+  }
+)
+
+function Button({
+  className,
+  variant = "default",
+  size = "default",
+  ...props
+}) {
+  return (
+    <ButtonPrimitive
+      data-slot="button"
+      className={cn(buttonVariants({ variant, size, className }))}
+      {...props} />
+  );
+}
+
+export { Button, buttonVariants }
+
+
+===== FILE: src\components\ui\dropdown-menu.jsx =====
+// import * as React from "react"
+import { Menu as MenuPrimitive } from "@base-ui/react/menu"
+
+import { cn } from "@/lib/utils"
+import { ChevronRightIcon, CheckIcon } from "lucide-react"
+
+function DropdownMenu({
+  ...props
+}) {
+  return <MenuPrimitive.Root data-slot="dropdown-menu" {...props} />;
+}
+
+function DropdownMenuPortal({
+  ...props
+}) {
+  return <MenuPrimitive.Portal data-slot="dropdown-menu-portal" {...props} />;
+}
+
+function DropdownMenuTrigger({
+  ...props
+}) {
+  return <MenuPrimitive.Trigger data-slot="dropdown-menu-trigger" {...props} />;
+}
+
+function DropdownMenuContent({
+  align = "start",
+  alignOffset = 0,
+  side = "bottom",
+  sideOffset = 4,
+  className,
+  ...props
+}) {
+  return (
+    <MenuPrimitive.Portal>
+      <MenuPrimitive.Positioner
+        className="isolate z-50 outline-none"
+        align={align}
+        alignOffset={alignOffset}
+        side={side}
+        sideOffset={sideOffset}>
+        <MenuPrimitive.Popup
+          data-slot="dropdown-menu-content"
+          className={cn(
+            "z-50 max-h-(--available-height) w-(--anchor-width) min-w-32 origin-(--transform-origin) overflow-x-hidden overflow-y-auto rounded-md bg-popover p-1 text-popover-foreground shadow-md ring-1 ring-foreground/10 duration-100 outline-none data-[side=bottom]:slide-in-from-top-2 data-[side=inline-end]:slide-in-from-left-2 data-[side=inline-start]:slide-in-from-right-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:overflow-hidden data-closed:fade-out-0 data-closed:zoom-out-95",
+            className
+          )}
+          {...props} />
+      </MenuPrimitive.Positioner>
+    </MenuPrimitive.Portal>
+  );
+}
+
+function DropdownMenuGroup({
+  ...props
+}) {
+  return <MenuPrimitive.Group data-slot="dropdown-menu-group" {...props} />;
+}
+
+function DropdownMenuLabel({
+  className,
+  inset,
+  ...props
+}) {
+  return (
+    <MenuPrimitive.GroupLabel
+      data-slot="dropdown-menu-label"
+      data-inset={inset}
+      className={cn(
+        "px-2 py-1.5 text-xs font-medium text-muted-foreground data-inset:pl-8",
+        className
+      )}
+      {...props} />
+  );
+}
+
+function DropdownMenuItem({
+  className,
+  inset,
+  variant = "default",
+  ...props
+}) {
+  return (
+    <MenuPrimitive.Item
+      data-slot="dropdown-menu-item"
+      data-inset={inset}
+      data-variant={variant}
+      className={cn(
+        "group/dropdown-menu-item relative flex cursor-default items-center gap-2 rounded-sm px-2 py-1.5 text-sm outline-hidden select-none focus:bg-accent focus:text-accent-foreground not-data-[variant=destructive]:focus:**:text-accent-foreground data-inset:pl-8 data-[variant=destructive]:text-destructive data-[variant=destructive]:focus:bg-destructive/10 data-[variant=destructive]:focus:text-destructive dark:data-[variant=destructive]:focus:bg-destructive/20 data-disabled:pointer-events-none data-disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 data-[variant=destructive]:*:[svg]:text-destructive",
+        className
+      )}
+      {...props} />
+  );
+}
+
+function DropdownMenuSub({
+  ...props
+}) {
+  return <MenuPrimitive.SubmenuRoot data-slot="dropdown-menu-sub" {...props} />;
+}
+
+function DropdownMenuSubTrigger({
+  className,
+  inset,
+  children,
+  ...props
+}) {
+  return (
+    <MenuPrimitive.SubmenuTrigger
+      data-slot="dropdown-menu-sub-trigger"
+      data-inset={inset}
+      className={cn(
+        "flex cursor-default items-center gap-2 rounded-sm px-2 py-1.5 text-sm outline-hidden select-none focus:bg-accent focus:text-accent-foreground not-data-[variant=destructive]:focus:**:text-accent-foreground data-inset:pl-8 data-popup-open:bg-accent data-popup-open:text-accent-foreground data-open:bg-accent data-open:text-accent-foreground [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+        className
+      )}
+      {...props}>
+      {children}
+      <ChevronRightIcon className="ml-auto" />
+    </MenuPrimitive.SubmenuTrigger>
+  );
+}
+
+function DropdownMenuSubContent({
+  align = "start",
+  alignOffset = -3,
+  side = "right",
+  sideOffset = 0,
+  className,
+  ...props
+}) {
+  return (
+    <DropdownMenuContent
+      data-slot="dropdown-menu-sub-content"
+      className={cn(
+        "w-auto min-w-[96px] rounded-md bg-popover p-1 text-popover-foreground shadow-lg ring-1 ring-foreground/10 duration-100 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95",
+        className
+      )}
+      align={align}
+      alignOffset={alignOffset}
+      side={side}
+      sideOffset={sideOffset}
+      {...props} />
+  );
+}
+
+function DropdownMenuCheckboxItem({
+  className,
+  children,
+  checked,
+  inset,
+  ...props
+}) {
+  return (
+    <MenuPrimitive.CheckboxItem
+      data-slot="dropdown-menu-checkbox-item"
+      data-inset={inset}
+      className={cn(
+        "relative flex cursor-default items-center gap-2 rounded-sm py-1.5 pr-8 pl-2 text-sm outline-hidden select-none focus:bg-accent focus:text-accent-foreground focus:**:text-accent-foreground data-inset:pl-8 data-disabled:pointer-events-none data-disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+        className
+      )}
+      checked={checked}
+      {...props}>
+      <span
+        className="pointer-events-none absolute right-2 flex items-center justify-center"
+        data-slot="dropdown-menu-checkbox-item-indicator">
+        <MenuPrimitive.CheckboxItemIndicator>
+          <CheckIcon />
+        </MenuPrimitive.CheckboxItemIndicator>
+      </span>
+      {children}
+    </MenuPrimitive.CheckboxItem>
+  );
+}
+
+function DropdownMenuRadioGroup({
+  ...props
+}) {
+  return (<MenuPrimitive.RadioGroup data-slot="dropdown-menu-radio-group" {...props} />);
+}
+
+function DropdownMenuRadioItem({
+  className,
+  children,
+  inset,
+  ...props
+}) {
+  return (
+    <MenuPrimitive.RadioItem
+      data-slot="dropdown-menu-radio-item"
+      data-inset={inset}
+      className={cn(
+        "relative flex cursor-default items-center gap-2 rounded-sm py-1.5 pr-8 pl-2 text-sm outline-hidden select-none focus:bg-accent focus:text-accent-foreground focus:**:text-accent-foreground data-inset:pl-8 data-disabled:pointer-events-none data-disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+        className
+      )}
+      {...props}>
+      <span
+        className="pointer-events-none absolute right-2 flex items-center justify-center"
+        data-slot="dropdown-menu-radio-item-indicator">
+        <MenuPrimitive.RadioItemIndicator>
+          <CheckIcon />
+        </MenuPrimitive.RadioItemIndicator>
+      </span>
+      {children}
+    </MenuPrimitive.RadioItem>
+  );
+}
+
+function DropdownMenuSeparator({
+  className,
+  ...props
+}) {
+  return (
+    <MenuPrimitive.Separator
+      data-slot="dropdown-menu-separator"
+      className={cn("-mx-1 my-1 h-px bg-border", className)}
+      {...props} />
+  );
+}
+
+function DropdownMenuShortcut({
+  className,
+  ...props
+}) {
+  return (
+    <span
+      data-slot="dropdown-menu-shortcut"
+      className={cn(
+        "ml-auto text-xs tracking-widest text-muted-foreground group-focus/dropdown-menu-item:text-accent-foreground",
+        className
+      )}
+      {...props} />
+  );
+}
+
+export {
+  DropdownMenu,
+  DropdownMenuPortal,
+  DropdownMenuTrigger,
+  DropdownMenuContent,
+  DropdownMenuGroup,
+  DropdownMenuLabel,
+  DropdownMenuItem,
+  DropdownMenuCheckboxItem,
+  DropdownMenuRadioGroup,
+  DropdownMenuRadioItem,
+  DropdownMenuSeparator,
+  DropdownMenuShortcut,
+  DropdownMenuSub,
+  DropdownMenuSubTrigger,
+  DropdownMenuSubContent,
+}
+
+
+===== FILE: src\context\.gitkeep =====
+
+===== FILE: src\context\DateRangeContext.jsx =====
+import { createContext, useContext, useState } from 'react';
+
+const DateRangeContext = createContext(undefined);
+
+export const DATE_RANGE_OPTIONS = [
+  'This Month',
+  'Last 3 Months',
+  'Last 6 Months',
+  'This Year',
+  'All Time',
+];
+
+export function DateRangeProvider({ children }) {
+  const [dateRange, setDateRange] = useState('This Month');
+
+  const value = {
+    dateRange,
+    setDateRange,
+  };
+
+  return <DateRangeContext.Provider value={value}>{children}</DateRangeContext.Provider>;
+}
+
+export function useDateRange() {
+  const context = useContext(DateRangeContext);
+  if (context === undefined) {
+    throw new Error('useDateRange must be used within a DateRangeProvider');
+  }
+  return context;
+}
+
+
+===== FILE: src\context\ThemeContext.jsx =====
+import { createContext, useContext, useEffect, useState } from 'react';
+
+const ThemeContext = createContext(undefined);
+
+function getInitialTheme() {
+  const stored = localStorage.getItem('finsight-theme');
+  if (stored === 'light' || stored === 'dark') {
+    return stored;
+  }
+  return 'light';
+}
+
+export function ThemeProvider({ children }) {
+  const [theme, setTheme] = useState(getInitialTheme);
+
+  useEffect(() => {
+    const root = document.documentElement;
+    if (theme === 'dark') {
+      root.classList.add('dark');
+    } else {
+      root.classList.remove('dark');
+    }
+    localStorage.setItem('finsight-theme', theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme((prev) => (prev === 'light' ? 'dark' : 'light'));
+  };
+
+  return <ThemeContext.Provider value={{ theme, toggleTheme }}>{children}</ThemeContext.Provider>;
+}
+
+export function useTheme() {
+  const context = useContext(ThemeContext);
+  if (context === undefined) {
+    throw new Error('useTheme must be used within a ThemeProvider');
+  }
+  return context;
+}
+
+
+===== FILE: src\data\.gitkeep =====
+
+===== FILE: src\data\goals.js =====
+// src/data/goals.js
+
+export const goals = [
+  {
+    id: 'goal_emergency_fund',
+    name: 'Emergency Fund',
+    targetAmount: 10000,
+    currentAmount: 8200,
+    targetDate: '2026-12-31',
+    icon: 'savings',
+  },
+  {
+    id: 'goal_vacation',
+    name: 'Vacation',
+    targetAmount: 3500,
+    currentAmount: 1450,
+    targetDate: '2026-11-15',
+    icon: 'flight',
+  },
+  {
+    id: 'goal_new_laptop',
+    name: 'New Laptop',
+    targetAmount: 2200,
+    currentAmount: 2200,
+    targetDate: '2026-08-01',
+    icon: 'laptop_mac',
+  },
+];
+
+
+===== FILE: src\data\transactions.js =====
+// src/data/transactions.js
+import { generateMockTransactions } from '@/lib/mockDataGenerator';
+
+// Fixed seed ensures the dataset is stable across reloads and builds —
+// important for a consistent portfolio demo experience.
+const SEED = 42;
+
+export const transactions = generateMockTransactions(SEED);
+
+
+===== FILE: src\hooks\.gitkeep =====
+
+===== FILE: src\hooks\useAutoAnimate.js =====
+export { useAutoAnimate } from '@formkit/auto-animate/react';
+
+
+===== FILE: src\hooks\useFilteredTransactions.js =====
+import { useMemo } from 'react';
+
+/**
+ * Maps a DATE_RANGE_OPTIONS label to a start date (inclusive).
+ * Returns null for "All Time" (no lower bound).
+ */
+function getRangeStartDate(dateRange, referenceDate = new Date()) {
+  const start = new Date(referenceDate);
+  start.setHours(0, 0, 0, 0);
+
+  switch (dateRange) {
+    case 'This Month':
+      start.setDate(1);
+      return start;
+    case 'Last 3 Months':
+      start.setMonth(start.getMonth() - 3);
+      return start;
+    case 'Last 6 Months':
+      start.setMonth(start.getMonth() - 6);
+      return start;
+    case 'This Year':
+      start.setMonth(0, 1);
+      return start;
+    case 'All Time':
+    default:
+      return null;
+  }
+}
+
+/**
+ * Filters, searches, and sorts a transactions array.
+ *
+ * @param {Array} transactions - full transactions dataset
+ * @param {Object} params
+ * @param {string} params.dateRange - one of DATE_RANGE_OPTIONS
+ * @param {string} params.search - free-text search on merchant name
+ * @param {string} params.category - category name, or "All Categories"
+ * @param {{ field: 'date'|'amount', direction: 'asc'|'desc' }} [params.sort]
+ * @returns {Array} filtered and sorted transactions
+ */
+export function useFilteredTransactions(
+  transactions,
+  { dateRange = 'All Time', search = '', category = 'All Categories', sort } = {}
+) {
+  return useMemo(() => {
+    let result = transactions ?? [];
+
+    // Date range filter
+    const startDate = getRangeStartDate(dateRange);
+    if (startDate) {
+      result = result.filter((t) => new Date(t.date) >= startDate);
+    }
+
+    // Search filter (merchant name, case-insensitive)
+    const trimmedSearch = search.trim().toLowerCase();
+    if (trimmedSearch) {
+      result = result.filter((t) => t.merchant.toLowerCase().includes(trimmedSearch));
+    }
+
+    // Category filter
+    if (category && category !== 'All Categories') {
+      result = result.filter((t) => t.category === category);
+    }
+
+    // Sort
+    if (sort?.field) {
+      const { field, direction = 'asc' } = sort;
+      const multiplier = direction === 'desc' ? -1 : 1;
+
+      result = [...result].sort((a, b) => {
+        if (field === 'date') {
+          return (new Date(a.date) - new Date(b.date)) * multiplier;
+        }
+        if (field === 'amount') {
+          return (a.amount - b.amount) * multiplier;
+        }
+        return 0;
+      });
+    }
+
+    return result;
+  }, [transactions, dateRange, search, category, sort]);
+}
+
+
+===== FILE: src\hooks\useSummaryTotals.js =====
+import { useMemo } from 'react';
+
+/**
+ * Computes summary totals from a transactions array.
+ *
+ * @param {Array} transactions - transactions to summarize (already
+ *   date/search/category filtered upstream, typically via useFilteredTransactions)
+ * @returns {{ balance: number, income: number, expenses: number, netSavings: number }}
+ */
+export function useSummaryTotals(transactions) {
+  return useMemo(() => {
+    const list = transactions ?? [];
+
+    let income = 0;
+    let expenses = 0;
+
+    for (const t of list) {
+      if (t.amount > 0) {
+        income += t.amount;
+      } else {
+        expenses += Math.abs(t.amount);
+      }
+    }
+
+    const balance = income - expenses;
+    const netSavings = balance;
+
+    return {
+      balance,
+      income,
+      expenses,
+      netSavings,
+    };
+  }, [transactions]);
+}
+
+
+===== FILE: src\index.css =====
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@import "@fontsource-variable/inter";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  /* Fonts */
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  /* Light mode values (defaults) */
+  --color-primary: #004ac6;
+  --color-primary-container: #2563eb;
+  --color-secondary: #006a69;
+  --color-tertiary: #784b00;
+  --color-error: #ba1a1a;
+  --color-success: #22c55e;
+  --color-warning: #f59e0b;
+
+  --color-background: #f8fafc;
+  --color-surface-container-lowest: #ffffff;
+  --color-on-surface: #131b2e;
+  --color-on-surface-variant: #434655;
+  --color-outline-variant: #c3c6d7;
+}
+
+.dark {
+  --color-background: #0f172a;
+  --color-surface-container-lowest: #1e293b;
+  --color-on-surface: #f1f5f9;
+  --color-on-surface-variant: #94a3b8;
+  --color-outline-variant: #334155;
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.922 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
+  --chart-1: oklch(0.87 0 0);
+  --chart-2: oklch(0.556 0 0);
+  --chart-3: oklch(0.439 0 0);
+  --chart-4: oklch(0.371 0 0);
+  --chart-5: oklch(0.269 0 0);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.556 0 0);
+}
+
+@layer base {
+  body {
+    font-family: var(--font-sans);
+    @apply bg-background text-foreground;
+  }
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    @apply font-sans;
+  }
+}
+
+@theme inline {
+  --font-heading: var(--font-sans);
+  --font-sans: 'Inter Variable', sans-serif;
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+:root {
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.87 0 0);
+  --chart-2: oklch(0.556 0 0);
+  --chart-3: oklch(0.439 0 0);
+  --chart-4: oklch(0.371 0 0);
+  --chart-5: oklch(0.269 0 0);
+  --radius: 0.625rem;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+===== FILE: src\lib\animationClasses.js =====
+/**
+ * Shared Tailwind class strings for consistent motion across the app.
+ * Import and spread/concatenate into a component's className as needed.
+ */
+
+// Card hover-lift: subtle raise + shadow increase on hover, matching
+// DESIGN_SYSTEM.md's resting/hover shadow spec.
+export const cardHoverLift =
+  'transition-transform transition-shadow duration-200 ease-out hover:-translate-y-0.5 hover:shadow-[0_4px_12px_rgba(0,0,0,0.05)]';
+
+// Fade-in: for elements entering the DOM (e.g. filtered list items).
+export const fadeIn = 'animate-in fade-in duration-200 ease-out';
+
+// Combined helper for card components that want both behaviors.
+export const cardMotion = `${cardHoverLift}`;
+
+
+===== FILE: src\lib\mockDataGenerator.js =====
+// src/lib/mockDataGenerator.js
+
+// Simple seeded PRNG (mulberry32) so output is reproducible across reloads/builds
+function createSeededRandom(seed) {
+  return function () {
+    seed |= 0;
+    seed = (seed + 0x6d2b79f5) | 0;
+    let t = Math.imul(seed ^ (seed >>> 15), 1 | seed);
+    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+}
+
+const CATEGORIES = [
+  'Housing',
+  'Food',
+  'Transport',
+  'Entertainment',
+  'Utilities',
+  'Income',
+  'Other',
+];
+
+const MERCHANTS_BY_CATEGORY = {
+  Housing: ['Skyline Apartments', 'Property Management Co.'],
+  Food: ["Trader Joe's", 'Whole Foods', 'Local Diner', 'Chipotle', 'Starbucks'],
+  Transport: ['Shell Gas Station', 'Uber', 'Metro Transit', 'Parking Authority'],
+  Entertainment: ['Netflix', 'Spotify', 'AMC Theatres', 'Steam', 'Concert Tickets Co.'],
+  Utilities: ['City Power & Light', 'Comcast Internet', 'Water Utility Dept.'],
+  Income: ['Acme Corp Payroll', 'Freelance Client Payment'],
+  Other: ['Amazon', 'Target', 'CVS Pharmacy', 'Misc. Purchase'],
+};
+
+function pick(rng, arr) {
+  return arr[Math.floor(rng() * arr.length)];
+}
+
+function randomAmount(rng, min, max) {
+  return Math.round((rng() * (max - min) + min) * 100) / 100;
+}
+
+function formatDate(date) {
+  return date.toISOString().split('T')[0];
+}
+
+function generateId(rng) {
+  return 'txn_' + Math.floor(rng() * 1e9).toString(36);
+}
+
+/**
+ * Generates a realistic set of mock transactions spanning the past 12 months.
+ * @param {number} seed - seed for reproducible output
+ * @returns {Array} array of transaction objects
+ */
+export function generateMockTransactions(seed = 42) {
+  const rng = createSeededRandom(seed);
+  const transactions = [];
+  const today = new Date();
+  const startDate = new Date(today);
+  startDate.setMonth(startDate.getMonth() - 11);
+  startDate.setDate(1);
+
+  // Walk month by month for 12 months
+  for (let m = 0; m < 12; m++) {
+    const monthDate = new Date(startDate);
+    monthDate.setMonth(startDate.getMonth() + m);
+    const year = monthDate.getFullYear();
+    const month = monthDate.getMonth();
+
+    // Recurring: rent on the 1st
+    transactions.push({
+      id: generateId(rng),
+      date: formatDate(new Date(year, month, 1)),
+      merchant: 'Skyline Apartments',
+      category: 'Housing',
+      amount: -randomAmount(rng, 1400, 1600),
+      type: 'expense',
+    });
+
+    // Recurring: biweekly paycheck (2 per month, ~1st and 15th)
+    [1, 15].forEach((day) => {
+      transactions.push({
+        id: generateId(rng),
+        date: formatDate(new Date(year, month, day)),
+        merchant: 'Acme Corp Payroll',
+        category: 'Income',
+        amount: randomAmount(rng, 2200, 2600),
+        type: 'income',
+      });
+    });
+
+    // Recurring: weekly groceries (~4 per month)
+    for (let w = 0; w < 4; w++) {
+      const day = Math.min(28, w * 7 + 1 + Math.floor(rng() * 5));
+      transactions.push({
+        id: generateId(rng),
+        date: formatDate(new Date(year, month, day)),
+        merchant: pick(rng, MERCHANTS_BY_CATEGORY.Food),
+        category: 'Food',
+        amount: -randomAmount(rng, 40, 140),
+        type: 'expense',
+      });
+    }
+
+    // Recurring: monthly utilities (2-3 bills)
+    const utilityCount = 2 + Math.floor(rng() * 2);
+    for (let u = 0; u < utilityCount; u++) {
+      const day = 5 + Math.floor(rng() * 20);
+      transactions.push({
+        id: generateId(rng),
+        date: formatDate(new Date(year, month, day)),
+        merchant: pick(rng, MERCHANTS_BY_CATEGORY.Utilities),
+        category: 'Utilities',
+        amount: -randomAmount(rng, 40, 180),
+        type: 'expense',
+      });
+    }
+
+    // Recurring: subscriptions (entertainment, 2-3 per month)
+    const subCount = 2 + Math.floor(rng() * 2);
+    for (let s = 0; s < subCount; s++) {
+      const day = 1 + Math.floor(rng() * 27);
+      transactions.push({
+        id: generateId(rng),
+        date: formatDate(new Date(year, month, day)),
+        merchant: pick(rng, MERCHANTS_BY_CATEGORY.Entertainment),
+        category: 'Entertainment',
+        amount: -randomAmount(rng, 8, 60),
+        type: 'expense',
+      });
+    }
+
+    // Random one-off transactions: transport + other (variable count per month)
+    const oneOffCount = 6 + Math.floor(rng() * 8); // 6-13 per month
+    for (let o = 0; o < oneOffCount; o++) {
+      const day = 1 + Math.floor(rng() * 27);
+      const category = pick(rng, ['Transport', 'Other']);
+      transactions.push({
+        id: generateId(rng),
+        date: formatDate(new Date(year, month, day)),
+        merchant: pick(rng, MERCHANTS_BY_CATEGORY[category]),
+        category,
+        amount: -randomAmount(rng, 10, 200),
+        type: 'expense',
+      });
+    }
+
+    // Occasional freelance income (30% chance per month)
+    if (rng() < 0.3) {
+      const day = 1 + Math.floor(rng() * 27);
+      transactions.push({
+        id: generateId(rng),
+        date: formatDate(new Date(year, month, day)),
+        merchant: 'Freelance Client Payment',
+        category: 'Income',
+        amount: randomAmount(rng, 200, 900),
+        type: 'income',
+      });
+    }
+  }
+
+  // Sort chronologically
+  transactions.sort((a, b) => new Date(a.date) - new Date(b.date));
+
+  return transactions;
+}
+
+export { CATEGORIES };
+
+
+===== FILE: src\lib\utils.js =====
+import { clsx } from "clsx";
+import { twMerge } from "tailwind-merge"
+
+export function cn(...inputs) {
+  return twMerge(clsx(inputs));
+}
+
+
+===== FILE: src\main.jsx =====
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+import { BrowserRouter } from 'react-router-dom';
+import './index.css';
+import App from './App.jsx';
+import { ThemeProvider } from './context/ThemeContext.jsx';
+import { DateRangeProvider } from './context/DateRangeContext.jsx';
+
+createRoot(document.getElementById('root')).render(
+  <StrictMode>
+    <BrowserRouter>
+      <ThemeProvider>
+        <DateRangeProvider>
+          <App />
+        </DateRangeProvider>
+      </ThemeProvider>
+    </BrowserRouter>
+  </StrictMode>
+);
+
+
+===== FILE: src\pages\.gitkeep =====
+
+===== FILE: src\pages\Dashboard.jsx =====
+import { useState, useEffect } from 'react';
+import SummaryCard from '@/components/SummaryCard';
+import TrendChart from '@/components/TrendChart';
+import CategoryDonutChart from '@/components/CategoryDonutChart';
+import TransactionsTable from '@/components/TransactionsTable';
+import GoalCard from '@/components/GoalCard';
+import Skeleton from '@/components/Skeleton';
+import ErrorBoundary from '@/components/ErrorBoundary';
+import { useDateRange } from '@/context/DateRangeContext';
+import { useFilteredTransactions } from '@/hooks/useFilteredTransactions';
+import { useSummaryTotals } from '@/hooks/useSummaryTotals';
+import { useAutoAnimate } from '@/hooks/useAutoAnimate';
+import { transactions } from '@/data/transactions';
+import { goals } from '@/data/goals';
+
+const SIMULATED_LOAD_MS = 400;
+
+function DashboardContent() {
+  const { dateRange } = useDateRange();
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setIsLoading(false), SIMULATED_LOAD_MS);
+    return () => clearTimeout(timer);
+  }, []);
+
+  const filteredTransactions = useFilteredTransactions(transactions, {
+    dateRange,
+    search: '',
+    category: 'All Categories',
+    sortBy: 'date',
+    sortDir: 'desc',
+  });
+
+  const { balance, income, expenses, netSavings } = useSummaryTotals(filteredTransactions);
+
+  const [goalsGridRef] = useAutoAnimate();
+
+  if (isLoading) {
+    return (
+      <main className="flex-grow px-margin-mobile md:px-margin-desktop py-lg md:py-xl max-w-[1440px] mx-auto w-full space-y-lg md:space-y-xl bg-background dark:bg-background">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-md md:gap-lg">
+          <Skeleton className="h-[110px]" />
+          <Skeleton className="h-[110px]" />
+          <Skeleton className="h-[110px]" />
+          <Skeleton className="h-[110px]" />
+        </div>
+        <div className="grid grid-cols-1 lg:grid-cols-10 gap-md md:gap-lg">
+          <Skeleton className="lg:col-span-6 h-[340px]" />
+          <Skeleton className="lg:col-span-4 h-[340px]" />
+        </div>
+        <Skeleton className="h-[400px] rounded-xl" />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-lg">
+          <Skeleton className="h-[220px]" />
+          <Skeleton className="h-[220px]" />
+          <Skeleton className="h-[220px]" />
+        </div>
+      </main>
+    );
+  }
+
+  return (
+    <main className="flex-grow px-margin-mobile md:px-margin-desktop py-lg md:py-xl max-w-[1440px] mx-auto w-full space-y-lg md:space-y-xl bg-background dark:bg-background text-on-surface dark:text-on-surface-variant">
+      {/* Summary Row */}
+      <div
+        id="overview"
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-md md:gap-lg scroll-mt-24"
+      >
+        <SummaryCard label="Total Balance" value={balance} showTrend={false} />
+        <SummaryCard label="Monthly Income" value={income} showTrend={false} />
+        <SummaryCard label="Monthly Expenses" value={expenses} showTrend={false} />
+        <SummaryCard label="Net Savings" value={netSavings} showTrend={false} />
+      </div>
+
+      {/* Charts Row */}
+      <div id="trends" className="grid grid-cols-1 lg:grid-cols-10 gap-md md:gap-lg scroll-mt-24">
+        <div className="lg:col-span-6">
+          <TrendChart transactions={filteredTransactions} />
+        </div>
+        <div className="lg:col-span-4">
+          <CategoryDonutChart transactions={filteredTransactions} />
+        </div>
+      </div>
+
+      {/* Transactions Section */}
+      <section
+        id="transactions"
+        className="bg-surface-container-lowest dark:bg-surface-container-lowest rounded-xl custom-shadow border border-outline-variant dark:border-outline overflow-hidden scroll-mt-24"
+      >
+        <TransactionsTable transactions={transactions} />
+      </section>
+
+      {/* Savings Goals Section */}
+      <section id="goals" className="space-y-lg scroll-mt-24">
+        <div className="flex items-center justify-between">
+          <h2 className="font-h3 text-h3 text-on-surface dark:text-on-surface-variant">
+            Savings Goals
+          </h2>
+        </div>
+        <div ref={goalsGridRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-lg">
+          {goals.map((goal) => (
+            <GoalCard key={goal.id} goal={goal} />
+          ))}
+        </div>
+      </section>
+    </main>
+  );
+}
+
+export default function Dashboard() {
+  return (
+    <ErrorBoundary>
+      <DashboardContent />
+    </ErrorBoundary>
+  );
+}
+
+
+===== FILE: src\pages\GoalsPage.jsx =====
+function GoalsPage() {
+  return (
+    <div className="p-lg">
+      <p className="font-body text-body text-on-surface-variant">
+        Goals — under construction (Phase 7C)
+      </p>
+    </div>
+  );
+}
+
+export default GoalsPage;
+
+
+===== FILE: src\pages\TransactionsPage.jsx =====
+function TransactionsPage() {
+  return (
+    <div className="p-lg">
+      <p className="font-body text-body text-on-surface-variant">
+        Transactions — under construction (Phase 7B)
+      </p>
+    </div>
+  );
+}
+
+export default TransactionsPage;
+
+
+===== FILE: vite.config.js =====
+import path from "path";
+import { fileURLToPath } from "url";
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+import tailwindcss from "@tailwindcss/vite";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
+export default defineConfig({
+  plugins: [react(), tailwindcss()],
+  resolve: {
+    alias: {
+      "@": path.resolve(__dirname, "./src"),
+    },
+  },
+});
+
