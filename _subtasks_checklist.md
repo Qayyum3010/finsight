@@ -14,25 +14,25 @@
 
 [x] 0.3.1 — Create GitHub repo — Create new empty repo named "finsight" on GitHub with Node `.gitignore` template — Files: `.gitignore` (auto-created) — Done when: repo exists and is visible at github.com — Dependency: none
 
-[ ] 0.3.2 — Clone repo locally — Clone the empty repo to local machine — Files: local folder `finsight/` — Done when: `git status` runs cleanly inside the folder — Dependency: 0.3.1
+[x] 0.3.2 — Clone repo locally — Clone the empty repo to local machine — Files: local folder `finsight/` — Done when: `git status` runs cleanly inside the folder — Dependency: 0.3.1
 
-[ ] 0.4.1 — Create Vercel account — Sign up for Vercel using GitHub OAuth — Files: none — Done when: Vercel dashboard loads and shows your account — Dependency: 0.3.1
+[x] 0.4.1 — Create Vercel account — Sign up for Vercel using GitHub OAuth — Files: none — Done when: Vercel dashboard loads and shows your account — Dependency: 0.3.1
 
 ━━━
 ## PHASE 1: Project Initialization and Configuration
 ━━━
 
-[] 1.1.1 — Scaffold Vite React app — Run `npm create vite@latest . -- --template react` inside the cloned repo folder — Files: `package.json`, `vite.config.js`, `src/main.jsx`, `src/App.jsx`, `index.html` — Done when: `npm install && npm run dev` starts a working default Vite page — Dependency: 0.3.2
+[x] 1.1.1 — Scaffold Vite React app — Run `npm create vite@latest . -- --template react` inside the cloned repo folder — Files: `package.json`, `vite.config.js`, `src/main.jsx`, `src/App.jsx`, `index.html` — Done when: `npm install && npm run dev` starts a working default Vite page — Dependency: 0.3.2
 
 [] 1.1.2 — Commit initial scaffold — Stage and commit the raw Vite scaffold — Files: all generated files — Done when: `git log` shows the initial commit and it's pushed to GitHub — Dependency: 1.1.1
 
-[ ] 1.2.1 — Install Tailwind dependencies — Run `npm install -D tailwindcss postcss autoprefixer` — Files: `package.json` — Done when: packages appear in `devDependencies` — Dependency: 1.1.1
+[] 1.2.1 — Install Tailwind dependencies — Run `npm install -D tailwindcss postcss autoprefixer` — Files: `package.json` — Done when: packages appear in `devDependencies` — Dependency: 1.1.1
 
-[ ] 1.2.2 — Initialize Tailwind config files — Run `npx tailwindcss init -p` — Files: `tailwind.config.js`, `postcss.config.js` — Done when: both files exist with default content — Dependency: 1.2.1
+[] 1.2.2 — Initialize Tailwind config files — Run `npx tailwindcss init -p` — Files: `tailwind.config.js`, `postcss.config.js` — Done when: both files exist with default content — Dependency: 1.2.1
 
-[ ] 1.2.3 — Set Tailwind content paths — Edit `content` array to include `./index.html` and `./src/**/*.{js,jsx}` — Files: `tailwind.config.js` — Done when: Tailwind classes applied in a test div actually render — Dependency: 1.2.2
+[] 1.2.3 — Set Tailwind content paths — Edit `content` array to include `./index.html` and `./src/**/*.{js,jsx}` — Files: `tailwind.config.js` — Done when: Tailwind classes applied in a test div actually render — Dependency: 1.2.2
 
-[ ] 1.2.4 — Enable class-based dark mode — Add `darkMode: 'class'` to Tailwind config — Files: `tailwind.config.js` — Done when: config file shows the setting saved — Dependency: 1.2.2
+[] 1.2.4 — Enable class-based dark mode — Add `darkMode: 'class'` to Tailwind config — Files: `tailwind.config.js` — Done when: config file shows the setting saved — Dependency: 1.2.2
 
 [ ] 1.2.5 — Add Tailwind directives to CSS — Add `@tailwind base; @tailwind components; @tailwind utilities;` to main CSS file — Files: `src/index.css` — Done when: a test Tailwind utility class (e.g. `bg-red-500`) visibly styles an element in the browser — Dependency: 1.2.3
 
