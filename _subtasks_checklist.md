@@ -74,23 +74,23 @@
 
 [x] 5.1.3 — Create goals mock data — Manually write 3 goal objects matching the schema (Emergency Fund, Vacation, New Laptop) — Files: `src/data/goals.js` — Done when: importing the file returns 3 correctly-shaped objects — Dependency: 1.7.1
 
-[ ] 5.2.1 — Build ThemeContext — Create context + provider managing `theme` state ('light'/'dark') with a toggle function — Files: `src/context/ThemeContext.jsx` — Done when: a test component can read and toggle theme value via `useContext` — Dependency: 1.7.1
+[x] 5.2.1 — Build ThemeContext — Create context + provider managing `theme` state ('light'/'dark') with a toggle function — Files: `src/context/ThemeContext.jsx` — Done when: a test component can read and toggle theme value via `useContext` — Dependency: 1.7.1
 
-[ ] 5.2.2 — Persist theme to localStorage — Add `useEffect` to read/write theme value from localStorage and apply `dark` class to `<html>` — Files: `src/context/ThemeContext.jsx` — Done when: toggling theme, then refreshing the page, keeps the same theme — Dependency: 5.2.1
+[x] 5.2.2 — Persist theme to localStorage — Add `useEffect` to read/write theme value from localStorage and apply `dark` class to `<html>` — Files: `src/context/ThemeContext.jsx` — Done when: toggling theme, then refreshing the page, keeps the same theme — Dependency: 5.2.1
 
-[ ] 5.2.3 — Build DateRangeContext — Create context + provider managing `dateRange` state (default "This Month") with a setter — Files: `src/context/DateRangeContext.jsx` — Done when: a test component can read and update the date range value — Dependency: 1.7.1
+[x] 5.2.3 — Build DateRangeContext — Create context + provider managing `dateRange` state (default "This Month") with a setter — Files: `src/context/DateRangeContext.jsx` — Done when: a test component can read and update the date range value — Dependency: 1.7.1
 
-[ ] 5.2.4 — Wrap App with providers — Wrap the root component with ThemeProvider and DateRangeProvider — Files: `src/main.jsx` — Done when: both contexts are accessible from any child component without errors — Dependency: 5.2.2, 5.2.3
+[x] 5.2.4 — Wrap App with providers — Wrap the root component with ThemeProvider and DateRangeProvider — Files: `src/main.jsx` — Done when: both contexts are accessible from any child component without errors — Dependency: 5.2.2, 5.2.3
 
-[ ] 5.3.1 — Build Header logo/wordmark — Create the left side of the header: icon + "FinSight" text — Files: `src/components/Header.jsx` — Done when: logo and wordmark render correctly styled per design spec — Dependency: 1.5.2
+[x] 5.3.1 — Build Header logo/wordmark — Create the left side of the header: icon + "FinSight" text — Files: `src/components/Header.jsx` — Done when: logo and wordmark render correctly styled per design spec — Dependency: 1.5.2
 
-[ ] 5.3.2 — Build date range dropdown — Add a shadcn `Select`/`DropdownMenu` with options (This Month, Last 3 Months, Last 6 Months, This Year, All Time) wired to DateRangeContext — Files: `src/components/Header.jsx` — Done when: selecting an option updates the context value (verify via console log) — Dependency: 5.2.4, 5.3.1
+[x] 5.3.2 — Build date range dropdown — Add a shadcn `Select`/`DropdownMenu` with options (This Month, Last 3 Months, Last 6 Months, This Year, All Time) wired to DateRangeContext — Files: `src/components/Header.jsx` — Done when: selecting an option updates the context value (verify via console log) — Dependency: 5.2.4, 5.3.1
 
-[ ] 5.3.3 — Build theme toggle button — Add a circular icon button (sun/moon via Lucide) wired to ThemeContext toggle function — Files: `src/components/Header.jsx` — Done when: clicking the icon switches the app's dark/light class — Dependency: 5.2.4, 5.3.1
+[x] 5.3.3 — Build theme toggle button — Add a circular icon button (sun/moon via Lucide) wired to ThemeContext toggle function — Files: `src/components/Header.jsx` — Done when: clicking the icon switches the app's dark/light class — Dependency: 5.2.4, 5.3.1
 
-[ ] 5.4.1 — Install and set up React Router — Wrap app in `<BrowserRouter>` and define initial route stubs for `/`, `/transactions`, `/goals` — Files: `src/main.jsx`, `src/App.jsx` — Done when: navigating to each URL renders a placeholder page with no errors — Dependency: 1.6.5
+[x] 5.4.1 — Install and set up React Router — Wrap app in `<BrowserRouter>` and define initial route stubs for `/`, `/transactions`, `/goals` — Files: `src/main.jsx`, `src/App.jsx` — Done when: navigating to each URL renders a placeholder page with no errors — Dependency: 1.6.5
 
-[ ] 5.5.1 — Build Layout shell component — Create a Layout wrapping Header, an `<Outlet />` (or children), and Footer — Files: `src/components/Layout.jsx` — Done when: all three routes render inside the shared Header/Footer shell — Dependency: 5.4.1, 5.3.3
+[x] 5.5.1 — Build Layout shell component — Create a Layout wrapping Header, an `<Outlet />` (or children), and Footer — Files: `src/components/Layout.jsx` — Done when: all three routes render inside the shared Header/Footer shell — Dependency: 5.4.1, 5.3.3
 
 [ ] 5.5.2 — Build Footer component — Create simple centered footer text with top border — Files: `src/components/Footer.jsx` — Done when: footer renders at bottom of every route — Dependency: 5.5.1
 
