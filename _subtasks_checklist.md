@@ -4,15 +4,15 @@
 ## PHASE 0: Environment and Prerequisites
 ━━━
 
-[ ] 0.1.1 — Install Node.js — Download and install Node.js LTS (20.x+) from nodejs.org — Files: none — Done when: `node -v` and `npm -v` both return version numbers in terminal — Dependency: none
+[x] 0.1.1 — Install Node.js — Download and install Node.js LTS (20.x+) from nodejs.org — Files: none — Done when: `node -v` and `npm -v` both return version numbers in terminal — Dependency: none
 
-[ ] 0.1.2 — Verify npm registry access — Run `npm ping` to confirm npm registry connectivity — Files: none — Done when: ping returns success — Dependency: 0.1.1
+[x] 0.1.2 — Verify npm registry access — Run `npm ping` to confirm npm registry connectivity — Files: none — Done when: ping returns success — Dependency: 0.1.1
 
-[ ] 0.2.1 — Install VS Code — Download and install VS Code — Files: none — Done when: VS Code opens successfully — Dependency: none
+[x] 0.2.1 — Install VS Code — Download and install VS Code — Files: none — Done when: VS Code opens successfully — Dependency: none
 
-[ ] 0.2.2 — Install VS Code extensions — Install ES7+ React snippets, Tailwind CSS IntelliSense, Prettier extensions — Files: none — Done when: all three appear in Extensions panel as installed — Dependency: 0.2.1
+[x] 0.2.2 — Install VS Code extensions — Install ES7+ React snippets, Tailwind CSS IntelliSense, Prettier extensions — Files: none — Done when: all three appear in Extensions panel as installed — Dependency: 0.2.1
 
-[ ] 0.3.1 — Create GitHub repo — Create new empty repo named "finsight" on GitHub with Node `.gitignore` template — Files: `.gitignore` (auto-created) — Done when: repo exists and is visible at github.com — Dependency: none
+[x] 0.3.1 — Create GitHub repo — Create new empty repo named "finsight" on GitHub with Node `.gitignore` template — Files: `.gitignore` (auto-created) — Done when: repo exists and is visible at github.com — Dependency: none
 
 [ ] 0.3.2 — Clone repo locally — Clone the empty repo to local machine — Files: local folder `finsight/` — Done when: `git status` runs cleanly inside the folder — Dependency: 0.3.1
 
@@ -22,9 +22,9 @@
 ## PHASE 1: Project Initialization and Configuration
 ━━━
 
-[ ] 1.1.1 — Scaffold Vite React app — Run `npm create vite@latest . -- --template react` inside the cloned repo folder — Files: `package.json`, `vite.config.js`, `src/main.jsx`, `src/App.jsx`, `index.html` — Done when: `npm install && npm run dev` starts a working default Vite page — Dependency: 0.3.2
+[] 1.1.1 — Scaffold Vite React app — Run `npm create vite@latest . -- --template react` inside the cloned repo folder — Files: `package.json`, `vite.config.js`, `src/main.jsx`, `src/App.jsx`, `index.html` — Done when: `npm install && npm run dev` starts a working default Vite page — Dependency: 0.3.2
 
-[ ] 1.1.2 — Commit initial scaffold — Stage and commit the raw Vite scaffold — Files: all generated files — Done when: `git log` shows the initial commit and it's pushed to GitHub — Dependency: 1.1.1
+[] 1.1.2 — Commit initial scaffold — Stage and commit the raw Vite scaffold — Files: all generated files — Done when: `git log` shows the initial commit and it's pushed to GitHub — Dependency: 1.1.1
 
 [ ] 1.2.1 — Install Tailwind dependencies — Run `npm install -D tailwindcss postcss autoprefixer` — Files: `package.json` — Done when: packages appear in `devDependencies` — Dependency: 1.1.1
 
